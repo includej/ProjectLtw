@@ -1,0 +1,140 @@
+html {
+    height: 100%;  /*altezza in percentuale*/
+    
+  }
+  
+  body {
+    margin:0px;  /*margine */
+    padding:0px;  /*spazio intorno ad un elemento */
+    font-family: 'Open Sans', sans-serif; /* font body */
+    background-image: url("../img/diagoona-bg-2.jpg");/*colore sfondo body */
+    background-color: #cccccc; /* Used if the image is unavailable */
+    height: 500px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+  .register-box{
+    position: absolute;  /*posizione assoluta rispetto alla pagina */
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%,-50%);   /*posiziona il box al centro */
+    background: rgba(0,0,0,.5);  /*colore box */
+    box-sizing: border-box;   /* permette che le dimensioni assegnate ad un elemento comprendano anche il padding e il bordo */
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);  /*ombre box */
+    border-radius: 10px;  /*smussamento angoli */
+}
+
+  .register-box h2 {  /* login */
+    margin: 0 0 30px;  /* margine inferiore 30px */
+    padding: 0;    
+    color: #fff;
+    text-align: center;    
+  }
+
+  .register-box .user-box {
+    position: relative;  /*posizionamento relativo al box */
+  }
+  
+  
+  .register-box .user-box input {  /*input box*/
+    width: 100%;       
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;  
+    outline: none;  /* serve per eliminare i bordi quando si fa focus */
+    background: transparent; 
+  }
+
+
+  
+  .register-box .user-box label { /*posizionamento utente e password */
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none; 
+    transition: 0.5s;
+  }
+  
+  
+  .register-box .user-box input:focus ~ label,  /* la tilde seleziona il fratello */ /*input valid serve per far rimanere formattato il testo quando input non  vuoto */
+  .register-box .user-box input:valid ~ label {   /*sposta username e password quando si fa focus */
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+  }
+  
+  .register-box .submit-btn{
+    text-align: center;
+  }
+
+  .register-box .submit-btn input{ 
+    position: relative;
+    display: inline-block;    
+    padding: 10px 20px;
+    background-color: transparent;
+    font-style: rgb(255,0,0);
+    font-size: 14px;
+    margin-top: 25px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    overflow: hidden;
+    border-radius: 5px;
+    border-color: #12b7c0;
+    border-width: 1.5px;
+    color: #fff;
+  }
+  
+  .register-box .submit-btn input:hover{
+    background: #03e9f4;
+    color: rgba(0,0,0);
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 100px #03e9f4;
+  }
+
+
+  /*input[type=text],input[type=password]{
+      width:100%;
+      padding: 10px 0px;
+      box-sizing: border-box;
+      background:transparent;
+      outline: none;
+      
+      border-bottom: 1px solid #fff;
+      color: #fff;
+      border-radius: 5px;
+      margin:5px;
+      font-weight: bold;
+  }
+
+  input[type=submit]{
+      width: 100%;
+      box-sizing: border-box;
+      padding:10px 0;
+      margin-top:30px;
+      outline:none;
+      border:none;
+      background: #60adde;
+      opacity: 0.7;
+      border-radius:20px;
+      font-size:20px;
+      color:#fff;
+  }
+
+  input[type=submit]:hover{
+      background: #03e9f4;
+      opacity: 0.7;
+  }*/
