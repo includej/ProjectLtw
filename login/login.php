@@ -6,10 +6,10 @@
       // username and password sent from form 
       
       $myusername = pg_escape_string($db,$_POST['username']);
-      $mypassword = pg_escape_string($db,$_POST['password']); 
-      
-      $sql = "SELECT * FROM utente WHERE username = '$myusername' AND password = '$mypassword'";
-      $result = pg_query($db,$sql) OR die("Query fallita".pg_last_error());
+      $mypassword = pg_escape_string($db,$_POST['password']);
+
+      $sql = "SELECT * FROM utente WHERE username = '{$myusername}' AND password = '{$mypassword}'";
+      $result = pg_query($db,$sql) OR die("alert('aiuto');");
       $row = pg_fetch_array($result, null, PGSQL_ASSOC);
       //$active = $row['active']; Da testare
       
@@ -19,9 +19,10 @@
 		
       if($count == 1) {
          $_SESSION['login_user'] = $myusername;
-         header("location: ../index.html");
+         header("Location: ../index.html");
       }else {
          $error = "Your Login Name or Password is invalid";
+         echo "alert('aiuto2');";
       }
    }
 ?>
@@ -46,9 +47,9 @@
         <!-- LOGIN BOX-->
         <div class="login-box">
             <h2>Login</h2>
-            <form method="POST" name="login" action="" id="login" onsubmit="return Submit();">
+            <form method="POST" name="login" action="" id="login">
               <div class="user-box">
-                <input type="text" name="utente" required>
+                <input type="text" name="username" required>
                 <label>Username</label>
               </div>
               <div class="user-box">
