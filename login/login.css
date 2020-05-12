@@ -31,7 +31,8 @@ body {
 
 .login-box h2 {  /* login */
   margin: 0 0 30px;  /* margine inferiore 30px */
-  padding: 0;    
+  padding: 0; 
+  margin-bottom: 60px;   
   color: #fff;
   text-align: center;    
 }
@@ -106,8 +107,19 @@ body {
 
 .login-box .error-login{
   color: #03e9f4;
+  display: none;
 }
 
+.dimenticata a{
+  color: #03e9f4;
+  font-size: 16px;
+}
+
+.error-mail {   /*errore formato mail sbagliato (password dimenticata)*/  
+  display: none;
+  color: #03e9f4;
+  font-size: 16px;
+}
     
 /* .login-box form a {    /*submit 
   position: relative;
