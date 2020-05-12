@@ -1,0 +1,76 @@
+#contenitore-barra { /* contenitore barra laterale */
+    z-index: 1;
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 65px;
+    overflow-y: hidden;
+    background: #2C3E50;
+    transition: 0.5s;
+}
+
+#contenitore-pagina { /*pagina principale*/
+    width: 100%;   
+    padding: 15px;
+    border: 5px solid green;
+}
+
+#contenitore.menu-on #contenitore-barra { /*sposta la barra*/
+    width: 250px;
+}
+
+#contenitore.menu-on #contenitore-pagina {  /*sposta contenuto pagina per far spazio alla barra*/
+    padding-left: 250px;
+    transition: 0.5s;
+}
+
+
+.barra-lat{         /*barra laterale*/
+    padding: 0;
+    list-style: none;
+}
+
+.barra-lat li{      /*elemti  barra*/
+    /*text-indent: 20px;
+    line-height: 40px;*/
+    text-align: center;
+    padding: 17px;
+}
+
+.barra-lat li a{  /*link associati elementi barra*/
+    display: block;
+    text-decoration: none;
+    color: rgb(255,255,255);
+}
+
+#prova2 {
+    position: absolute;
+    z-index: 2;
+    width: 95%;
+    left: 5%;
+}
+
+#nav { /*navbar */
+    height: 65px;
+}
+
+.contenitore-menu {  /*conteiner pulsante che fa uscire la barra*/
+    position: absolute;
+    width: 5%;
+    z-index: 1;
+    background-color:  #F8F8F8;
+    height: 65px;
+    color: #F8F8F8e;
+    text-align: center;
+}
+
+#btn-menu {
+    position: absolute;
+    top: 100 px;
+}
+
+.barra-lat li a img{   /*immagini elementi barra*/
+    height: 50px;
+    width: 150px;
+
+}
