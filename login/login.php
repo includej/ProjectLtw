@@ -1,4 +1,30 @@
-<!DOCTYPE html>
+<?php
+   include("../config.php");
+   session_start();
+   
+   if($_SERVER["REQUEST_METHOD"] == "POST") {
+      // username and password sent from form 
+      
+      $myusername = pg_escape_string($db,$_POST['username']);
+      $mypassword = pg_escape_string($db,$_POST['password']); 
+      
+      $sql = "SELECT * FROM utente WHERE username = '$myusername' AND password = '$mypassword'";
+      $result = pg_query($db,$sql) OR die("Query fallita".pg_last_error());
+      $row = pg_fetch_array($result, null, PGSQL_ASSOC);
+      //$active = $row['active']; Da testare
+      
+      $count = pg_num_rows($result);
+      
+      // If result matched $myusername and $mypassword, table row must be 1 row
+		
+      if($count == 1) {
+         $_SESSION['login_user'] = $myusername;
+         header("location: ../index.html");
+      }else {
+         $error = "Your Login Name or Password is invalid";
+      }
+   }
+?>
 <html lang="en">
     <head>
         <meta charset="uft-8">
