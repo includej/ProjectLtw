@@ -22,9 +22,9 @@ html {
     width: 400px;
     padding: 40px;
     transform: translate(-50%,-50%);   /*posiziona il box al centro */
-    background: rgba(0,0,0,.5);  /*colore box */
+    background: rgba(0,0,0,.8);  /*colore box */
     box-sizing: border-box;   /* permette che le dimensioni assegnate ad un elemento comprendano anche il padding e il bordo */
-    box-shadow: 0 15px 25px rgba(0,0,0,.6);  /*ombre box */
+    box-shadow: 0 10px 25px rgba(0,0,0,.6);  /*ombre box */
     border-radius: 10px;  /*smussamento angoli */
 }
 

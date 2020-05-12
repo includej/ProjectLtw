@@ -6,14 +6,7 @@ function showP(){      //funzione mostra passwor// [0]d
     } else {
       p.type = "password";
     }
-}
-
-
-
-  function check(){   //funzione controllo dati
-    return false;
-  }
-    
+}    
 
 $(document).ready(function(){
   $("#show").click(function(){  //Event onClick Mostra Password
@@ -25,12 +18,7 @@ $(document).ready(function(){
       p.type = "password";
     };
   });
-  $("#login").submit(function() {   //event onSubmit form #login
-    if (!check()){
-        $(".error-login").css("display","inline");
-        return false;       
-    };
-  });
+  /*  Add Event onSubmit  */
   $("#dimenticata").submit(() => {
       if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test("#dimenticata")){   //event onSubmit form #dimenticata
          return true;
