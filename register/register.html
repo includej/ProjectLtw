@@ -25,31 +25,72 @@
 
         <div class="register-box">
             <h2>Iscriviti</h2>
-            <form action="register.php" method="POST" id="registr" name="registr">
+            <form id="registr" name="registr">
                 <div class="user-box">
-                    <input type="text" name="nome" required>
+                    <input type="text" name="nome" id="nome" required>
                     <label>Nome</label>
                 </div>
                 <div class="user-box">
-                    <input type="text" name="cognome" required>
+                    <input type="text" name="cognome" id="cognome" required>
                     <label>Cognome</label>
                 </div>
                 <div class="user-box">
-                    <input type="text" name="inEmail" required>
+                    <input type="text" name="inEmail" id="inEmail" required>
                     <label>Email</label>
                 </div>
                 <div class="user-box">
-                    <input type="username" name="username" required>
+                    <input type="username" name="username" id="username" required>
                     <label>Username</label>
                 </div>
                 <div class="user-box">
-                    <input type="password" name="password" required>
+                    <input type="password" name="password" id="password" required>
                     <label>Password (Almeno 6 caratteri)</label>
                 </div>
+                <div id="variabile" class="text-center"></div>
                 <div class="submit-btn">
-                    <input type="submit" value="Submit">
+                    <input type="submit" value="Submit" id="sub_btn">
                 </div>
             </form>
         </div>
+        <script>
+            $(document).ready(function(){
+                $("#sub_btn").click(function(e){        //Al click del bottone
+                    e.preventDefault();               //Cancella la funzione Submit
+                    //$("#registr").validate();           //Valida i campi, cercando i required  /*Da rivedere*/
+                    
+                    //Variabili
+                    var nome = $("#nome").val().trim();
+                    var cognome = $("#cognome").val().trim();
+                    var inEmail = $("#inEmail").val().trim();
+                    var username = $("#username").val().trim();
+                    var password = $("#password").val().trim();
+                    
+
+                    if (nome!="" && cognome!="" && inEmail!="" && username!="" && password!=""){    //Controllo ulteriore se campi sono vuoti
+                        $.ajax("register.php", {      //Richiesta AJAX(formato JQUERY)
+                            type:'POST',
+                            data: $("#registr").serialize(),
+                        })
+                        .done(function(res){                        //In caso di risposta da richiesta AJAX
+                            if (res!='0'){
+                                $("#variabile").html(res);
+                                $("#variabile").addClass("alert alert-danger");
+                            } else {
+                                $("#variabile").removeClass("alert-danger");
+                                $("#variabile").addClass("alert alert-success");
+                                $("#variabile").html("Registrazione avvenuta con successo!");
+                                setTimeout(function(){window.location="../index.html";}, 3000);
+                            }
+                        })
+                        .failure(function(data){                    //In caso di richiesta AJAX Fallita
+                            alert('aia');
+                        })
+                        .error(function(err){
+                            alert("erroe");
+                        });
+                    };
+                });
+            });
+        </script>
     </body>
 </html>

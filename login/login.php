@@ -1,10 +1,9 @@
 <?php
-   include("../config.php");
-   session_start();
+   
    
    if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form 
-      
+      include("../config.php");
       $myusername = pg_escape_string($db,$_POST['username']);
       $mypassword = pg_escape_string($db,$_POST['password']);
 
@@ -12,17 +11,17 @@
       $result = pg_query($db,$sql) OR die("alert('aiuto');");
       $row = pg_fetch_array($result, null, PGSQL_ASSOC);
       //$active = $row['active']; Da testare
-      
       $count = pg_num_rows($result);
       
       // If result matched $myusername and $mypassword, table row must be 1 row
-		
       if($count == 1) {
-         $_SESSION['login_user'] = $myusername;
-         header("Location: ../index.html");
-      }else {
-         $error = "Your Login Name or Password is invalid";
-         echo "alert('aiuto2');";
+        //Dentro la var globale SESSION, viene creato una var con value=myusername
+        session_start();
+        $_SESSION['username'] = $myusername;
+        header("Location: ../index.html");
+      } else {      //  Da implementare meglio con AJAX
+        $error = "Your Login Name or Password is invalid";
+        echo "alert('aiuto2');";
       }
    }
 ?>
