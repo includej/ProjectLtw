@@ -14,9 +14,6 @@
     padding: 15px;
 }
 
-#contenitore.menu-on #contenitore-barra { /*sposta la barra*/
-    width: 200px;
-}
 
 #contenitore.menu-on #contenitore-pagina {  /*sposta contenuto pagina per far spazio alla barra*/
     padding-left: 200px;
@@ -24,43 +21,65 @@
 }
 
 
-.barra-lat{         /*barra laterale*/
+/*barra laterale*/
+.barra-lat{         
     padding: 0;
     list-style: none;
 }
 
-.barra-lat li{      /*elemti  barra*/
-    text-align: center;
-    height: 50px;
+#contenitore.menu-on #contenitore-barra { /*sposta la barra*/
     width: 200px;
-    padding-top: 20px;
 }
 
+/*bottoni dropdown  barra*/
 
-/*link associati elementi barra*/
-.a-bar-txt{  
+.btn-barra li a{
     display:inline-block;
-    font-style: italic;
-    font-size: 20px;
-    color: black;
-} 
-
-.a-bar-log {
-    padding-right: 10px;
-    color: black;
-}
-
-.a-bar-img {  /*settaggio link immagini barra*/
-    display: block;
+    font-size: xx-large;
     text-decoration: none;
-    height: 50px;
-    width: 200px;
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+    padding-top: 10px;
+    padding-left: 20px;
+    width: 250px;
+}
+
+.btn-barra li a span{
+    padding-left: 10px;
+}
+
+.btn-barra li a:hover{
+    background-color: lightgray;
+}
+
+/*lista dropdown*/
+
+#contenitore-drop ul li a{
+    position: absolute;
+    display:inline-block;
+    text-decoration: none;
+    color: black;
+    padding-left: 55px;
+    width: 250px;
+}
+
+#contenitore-drop ul li a:hover{
+    background-color: lightgray;
 }
 
 
-/*.barra-lat li a:hover{  
-    background-color: lightblue;
-}*/
+#contenitore-drop{
+    width: 250px;
+    padding-bottom: 5px;
+}
+
+.logo-freccia{
+    position: absolute;
+    font-size: 0.8rem;
+    left: 180px;
+    padding-top: 15px;
+}
+/*navbar */
 
 #contenitore-nav {   
     position: absolute;
@@ -69,7 +88,7 @@
     left: 50px;
 }
 
-#nav {     /*navbar */
+#nav {     
     height: 65px;
 }
 
@@ -85,14 +104,28 @@
 .contenitore-menu li{  /*posizionamento logo bottone menù*/
     position: relative;
     top: 20px;
-
 }
 
-.barra-lat li a img{   /*immagini elementi barra*/
-    height: 50px;
-    width: 150px;
+
+/*elementi dropdown Java visibilà*/
+
+.li-java-off { 
+    display: none;
 }
 
-#prova3 {
-    padding-left: 5px;
+#contenitore.li-java-on #lista-java{ 
+    display: inline-block;
 }
+
+/*elementi dropdown PYTHON visibilà*/
+
+.li-python-off { 
+    display: none;
+}
+
+#contenitore.li-python-on #lista-python{ 
+    display: inline-block;
+}
+
+
+
