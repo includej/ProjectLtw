@@ -5,22 +5,21 @@
     height: 100%;
     top: 65px;
     overflow-y: hidden;
-    background: #2C3E50;
+    background: #F8F8F8;
     transition: 0.5s;
 }
 
 #contenitore-pagina { /*pagina principale*/
     width: 100%;   
     padding: 15px;
-    border: 5px solid green;
 }
 
 #contenitore.menu-on #contenitore-barra { /*sposta la barra*/
-    width: 250px;
+    width: 200px;
 }
 
 #contenitore.menu-on #contenitore-pagina {  /*sposta contenuto pagina per far spazio alla barra*/
-    padding-left: 250px;
+    padding-left: 200px;
     transition: 0.5s;
 }
 
@@ -31,46 +30,69 @@
 }
 
 .barra-lat li{      /*elemti  barra*/
-    /*text-indent: 20px;
-    line-height: 40px;*/
     text-align: center;
-    padding: 17px;
+    height: 50px;
+    width: 200px;
+    padding-top: 20px;
 }
 
-.barra-lat li a{  /*link associati elementi barra*/
+
+/*link associati elementi barra*/
+.a-bar-txt{  
+    display:inline-block;
+    font-style: italic;
+    font-size: 20px;
+    color: black;
+} 
+
+.a-bar-log {
+    padding-right: 10px;
+    color: black;
+}
+
+.a-bar-img {  /*settaggio link immagini barra*/
     display: block;
     text-decoration: none;
-    color: rgb(255,255,255);
+    height: 50px;
+    width: 200px;
 }
 
-#prova2 {
+
+/*.barra-lat li a:hover{  
+    background-color: lightblue;
+}*/
+
+#contenitore-nav {   
     position: absolute;
     z-index: 2;
-    width: 95%;
-    left: 5%;
+    width: 100%;
+    left: 50px;
 }
 
-#nav { /*navbar */
+#nav {     /*navbar */
     height: 65px;
 }
 
 .contenitore-menu {  /*conteiner pulsante che fa uscire la barra*/
     position: absolute;
-    width: 5%;
+    width: 50px;
     z-index: 1;
     background-color:  #F8F8F8;
     height: 65px;
     color: #F8F8F8e;
-    text-align: center;
 }
 
-#btn-menu {
-    position: absolute;
-    top: 100 px;
+.contenitore-menu li{  /*posizionamento logo bottone menù*/
+    position: relative;
+    top: 20px;
+
 }
 
 .barra-lat li a img{   /*immagini elementi barra*/
     height: 50px;
     width: 150px;
+}
 
+#prova3 {
+    padding-left: 5px;
 }
