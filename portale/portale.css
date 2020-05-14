@@ -1,3 +1,12 @@
+body{
+    height: 100%;
+    overflow-y: hidden;
+}
+
+html { 
+    height: 100% 
+} 
+
 #contenitore-barra { /* contenitore barra laterale */
     z-index: 1;
     position: absolute;
@@ -10,11 +19,15 @@
 }
 
 .contenuto-pagina { /*pagina principale*/
-    width: 100%;   
-    padding: 15px;
+    width: auto;
+    height: 100%;
+    padding: 10px;
     padding-top: 65px;
     margin-left: 0;
     transition: 0.5s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -94,13 +107,15 @@
     height: 65px;
 }
 
+
+
 .contenitore-menu {  /*conteiner pulsante che fa uscire la barra*/
     position: absolute;
     width: 50px;
     z-index: 1;
     background-color:  #F8F8F8;
     height: 65px;
-    color: #F8F8F8e;
+    color: #F8F8F8;
 }
 
 .contenitore-menu li{  /*posizionamento logo bottone menù*/

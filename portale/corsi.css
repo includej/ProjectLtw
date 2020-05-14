@@ -1,0 +1,26 @@
+#contenitore-corsi{
+    width: 100%;
+    height: 100%;
+}
+
+#contenitore-corsi li div{
+    width: 200px;
+}
+
+
+
+
+
+.link-corso{
+    text-decoration: none;
+    width: 100%;
+    height: 270px;
+    display:inline-block;
+    padding-top: 20px;
+    color: black;
+    border-color: rgb(190, 10, 10);
+    border-width: 1px;
+    background-color: white;
+    border-radius: 10px;
+    margin: 20px;
+}

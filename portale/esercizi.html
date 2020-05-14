@@ -1,0 +1,41 @@
+<!DOCTYPE html>  
+<html>
+    <head>
+        <!-- RIVEDERE -->
+            <title> Parte Ajax </title>
+    </head>
+    <body>
+        <div>
+            <button id = "esercizio">esercizioj1</button>
+            <button id = "esercizio">esercizioj2</button>
+            <button id = "esercizio">esercizioj3</button>
+        </div>
+        <hr/>
+        <div id="eserciziodin">
+            Seleziona il documento da visualizzare
+        </div>
+        <hr/>
+        Resto del documento<br/>
+        ...
+<script>
+    var esercizi = document.getElementsById("esercizio");
+    for(i=0; i<esercizi.length; i++){
+        esercizi[i].onclick = caricaEsercizio;
+    }
+
+    function caricaEsercizio(e){
+        var httpRequest = new XMLHttpRequest();
+        httpRequest.prevTarget = e.target;
+        httpRequest.onreadystatechange = gestisciResponse;
+        httpRequest.open("GET","/esercizijava/" + e.target.innerHTML + ".html", true);
+        httpRequest.send();
+    }
+
+    function gestisciResponse(e) {
+            if (e.target.readyState == XMLHttpRequest.DONE && e.target.status == 200) {
+                document.getElementById("eserciziodin").innerHTML = e.target.responseText;
+        }
+    }
+</script>
+</body>
+</html>

@@ -13,6 +13,7 @@
     <script type="text/javascript" lang="javascript" src="portale.js"></script>
     <link rel="stylesheet" href="portale.css">
     <title>Portale</title>
+    <!--<script src="sessionControl/sessionControl.js"></script> -->
 </head>
 <body>
     <div id="contenitore">
@@ -24,16 +25,18 @@
           </li>    
         </div>
         <!-- navbar -->
-        <div id="contenitore-nav">
-        <nav class="navbar navbar-expand navbar-light bg-light" id="nav" >
+        <div id="container-fluid" style="padding-left: 35px">
+        <nav class="navbar navbar-expand navbar-light bg-dark" id="nav" >
             <a class="navbar-brand" href="#"></a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="#"><i class="fas fa-code"></i> Progect Coding <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="#" ><i class="fas fa-code"></i> Progect Coding <span class="sr-only">(current)</span></a>
                 </li>
               </ul>
             </div>
+            <!--div class ="nav-item" id="dynamicZone">
+            </div-->
           </nav>
         </div>
 
@@ -68,12 +71,8 @@
 
          <!-- Contenuto pagina -->
          <div id="contenitore-pagina" class="contenuto-pagina">
-            <div class="contenitore-fluid">
-                <h1>Prova</h1>
-                <p>Prova ProvaProvaProvaProvaProvaProvaProvaProvaProvaProvaProvaProvaProva
-                    ProvaProvaProvaProvaProvaProvaProvaProvaProvaProvaProvaProvaProvaProva
-                    ProvaProvaProvaProvaProvaProvaProvaProvaProvaProvaProvaProvaProvaProva
-                </p>
+            <div class="contenitore-fluid" style="flex: 1; overflow-y: scroll;" id="dynam">
+                
             </div>
          </div>
     </div>
@@ -110,6 +109,10 @@
     e.preventDefault();
     $("#contenitore").toggleClass("li-python-on");
     direzioneFreccia($("#freccia-python"));
+    });
+
+    $(document).ready(function(){
+      $("#dynam").load("corsi.html");
     });
     
     </script>
