@@ -6,9 +6,9 @@
     </head>
     <body>
         <div>
-            <button id = "esercizio">esercizioj1</button>
-            <button id = "esercizio">esercizioj2</button>
-            <button id = "esercizio">esercizioj3</button>
+            <button name ="esercizio">esercizioj1</button>
+            <button name ="esercizio">esercizioj2</button>
+            <button name ="esercizio">esercizioj3</button>
         </div>
         <hr/>
         <div id="eserciziodin">
@@ -18,16 +18,18 @@
         Resto del documento<br/>
         ...
 <script>
-    var esercizi = document.getElementById("esercizio");
+    var esercizi = document.getElementsByName("esercizio");
     for(i=0; i<esercizi.length; i++){
         esercizi[i].onclick = caricaEsercizio;
     }
 
     function caricaEsercizio(e){
         var httpRequest = new XMLHttpRequest();
-        httpRequest.prevTarget = e.target;
         httpRequest.onreadystatechange = gestisciResponse;
-        httpRequest.open("GET","/esercizijava/" + e.target.innerHTML + ".html", true);
+        httpRequest.open("GET","../esercizijava/" + e.target.innerHTML + ".html", true);
+        httpRequest.send();
+
+        httpRequest.open("POST","../esercizijava/esJ.php", true);
         httpRequest.send();
     }
 

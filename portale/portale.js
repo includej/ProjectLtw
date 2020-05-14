@@ -1,3 +1,0 @@
-
-$("#contenitore").toggleClass("menu-on");
-});
