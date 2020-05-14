@@ -9,15 +9,17 @@
     transition: 0.5s;
 }
 
-#contenitore-pagina { /*pagina principale*/
+.contenuto-pagina { /*pagina principale*/
     width: 100%;   
     padding: 15px;
+    padding-top: 65px;
+    margin-left: 0;
+    transition: 0.5s;
 }
 
 
-#contenitore.menu-on #contenitore-pagina {  /*sposta contenuto pagina per far spazio alla barra*/
-    padding-left: 200px;
-    transition: 0.5s;
+.contenuto-pagina-destra {  /*sposta contenuto pagina per far spazio alla barra*/
+    margin-left: 200px;
 }
 
 
@@ -126,6 +128,3 @@
 #contenitore.li-python-on #lista-python{ 
     display: inline-block;
 }
-
-
-

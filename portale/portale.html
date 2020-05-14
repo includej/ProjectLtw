@@ -67,9 +67,8 @@
          </div>
 
          <!-- Contenuto pagina -->
-         <div id="contenitore-pagina">
+         <div id="contenitore-pagina" class="contenuto-pagina">
             <div class="contenitore-fluid">
-                
                 <h1>Prova</h1>
                 <p>Prova ProvaProvaProvaProvaProvaProvaProvaProvaProvaProvaProvaProvaProva
                     ProvaProvaProvaProvaProvaProvaProvaProvaProvaProvaProvaProvaProvaProva
@@ -100,6 +99,7 @@
     $("#btn-menu").click(function (e) {
     e.preventDefault();
     $("#contenitore").toggleClass("menu-on");
+    $("#contenitore-pagina").toggleClass("contenuto-pagina-destra");
     });
     $("#btn-java").click(function (e) {
     e.preventDefault();
