@@ -60,7 +60,8 @@
                </div>
                 <div id="contenitore-drop">
                   <ul class="li-java-off" id="lista-java">
-                    <li><a href="#">Storia</a></li>
+                    <li><a href="#" id="lezioni-java">Lezioni</a></li>
+                    <li><a href="#" id="storia-java">Storia</a></li>
                     <li><a href="#">Documentazione</a></li>
                     <li><a href="#">Novità</a></li>
                   </ul>
@@ -115,10 +116,15 @@
     $("#contenitore").toggleClass("li-python-on");
     direzioneFreccia($("#freccia-python"));
     });
-
+ 
     /* Da modificare, con interazioni bottoni */
     $(document).ready(function(){
-      $("#dynam").load("corsi.html");
+      $("#lezioni-java").click(function(){
+        $("#dynam").load("corsi.html #corso-java");
+      });
+      $("#storia-java").click(function(){
+        $("#dynam").empty();
+      });
     });
     
     </script>

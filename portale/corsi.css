@@ -20,13 +20,22 @@
     position: relative;
     text-decoration: none;
     width: 99%;
-    height: 270px;
+    height: 260px;
     display:inline-block;
-    padding-top: 50px;
     color: black;
     border-color: rgb(190, 10, 10);
     border-width: 1px;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 20px;
     opacity: 0.9;
+}
+
+.img-fluid{
+    position: relative;
+    height: 200px;
+    width: 380px;
+    margin-bottom: 30px;
+    margin-top:30px;
+    margin-left:30px;
+    border-radius: 20px;
 }
