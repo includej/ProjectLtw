@@ -12,6 +12,21 @@
     <link rel="stylesheet" href="corsi.css">
     <link href="../css/templatemo-diagoona.css" rel="stylesheet"/>
     <title>Portale</title>
+    <script src="../sessionControl/sessionControl.js"></script>
+
+    <!-- style per navbar#Parte Destra-->
+    <style>
+      #dynamicZone a{
+        color:white;
+        font-weight: bolder;
+      }
+
+      #dynamicZone a:hover{
+        color: #9CC;
+        transition: 0.3s;
+        background:unset;
+      }
+    </style>
 
 </head>
 <body>
@@ -27,8 +42,12 @@
                 </li>
               </ul>
             </div>
-            <!--div class ="nav-item" id="dynamicZone">
-            </div-->
+            <!-- parte dinamica navbar#Parte Destra-->
+            <div class="nav-item" style="display: flex" id="dynamicZone">
+              <div id="userZone_2" style="margin-right:5px;"></div>
+              <div id="userZone_0"></div>              
+              <div id="userZone_1"></div>
+            <div>
           </nav>
         </div>
 
