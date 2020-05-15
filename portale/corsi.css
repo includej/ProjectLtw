@@ -1,24 +1,32 @@
 .contenitore-fluid{
-    padding-top: 20px;
+    padding-top: 10px;
     position: relative;
-    width: calc(100% - 20px);
+    width: 100%;   /*da rivedere*/
     height: 100%;
     padding-left: 220px;
+    background-image: url("../img/diagoona-bg-3.jpg");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
 }
 
 
 
+.contenitore-fluid div{
+    margin-bottom: 30px;
+}
 
 .link-corso{
     position: relative;
     text-decoration: none;
-    width: 100%;
+    width: 99%;
     height: 270px;
     display:inline-block;
-    padding-top: 20px;
+    padding-top: 50px;
     color: black;
     border-color: rgb(190, 10, 10);
     border-width: 1px;
     background-color: white;
     border-radius: 10px;
+    opacity: 0.9;
 }

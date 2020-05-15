@@ -16,15 +16,14 @@
 </head>
 <body>
     <div id="contenitore">
-
         <!-- navbar -->
         <div id="container-fluid" >
-        <nav class="navbar navbar-expand navbar-light bg-dark" id="nav" >
+        <nav class="navbar navbar-expand navbar-dark bg-dark" id="nav" >
             <a class="navbar-brand" href="#"></a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="#" ><i class="fas fa-code"></i> Progect Coding <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="#" ><i class="fas fa-code"></i> Project Coding <span class="sr-only">(current)</span></a>
                 </li>
               </ul>
             </div>
@@ -42,9 +41,9 @@
                </div>
                 <div id="contenitore-drop">
                   <ul class="li-java-off" id="lista-java">
-                    <li><a href="#">Lezioni</a></li>
-                    <li><a href="#">Video</a></li>
-                    <li><a href="#">Esercizi</a></li>
+                    <li><a href="#">Storia</a></li>
+                    <li><a href="#">Documentazione</a></li>
+                    <li><a href="#">Novità</a></li>
                   </ul>
                 </div>
                 <!-- dropdown python -->
@@ -53,16 +52,15 @@
                 </div>
                 <div id="contenitore-drop">
                   <ul class="li-python-off" id="lista-python">
-                    <li><a href="#">Lezioni</a></li>
-                    <li><a href="#">Video</a></li>
-                    <li><a href="#">Esercizi</a></li>
+                    <li><a href="#">Storia</a></li>
+                    <li><a href="#">Documentazione</a></li>
+                    <li><a href="#">Novità</a></li>
                     </ul>
                 </div>
                 </ul>
         </div>
         <!-- Contenuto pagina -->
-        <div class="contenitore-fluid" id="dynam">
-          <a href="#" class="link-corso"> PROVA</a>
+          <div class="contenitore-fluid" id="dynam" style="flex: 1; overflow-y: scroll;">
         </div>
       </div>
 
@@ -99,9 +97,10 @@
     direzioneFreccia($("#freccia-python"));
     });
 
-    /*$(document).ready(function(){
+    /* Da modificare, con interazioni bottoni */
+    $(document).ready(function(){
       $("#dynam").load("corsi.html");
-    }); */
+    });
     
     </script>
 </body>
