@@ -5,16 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
     <link href="../fontawesome/css/all.min.css" rel="stylesheet" /> 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-    <script type="text/javascript" lang="javascript" src="portale.js"></script>
-    <link rel="stylesheet" href="portale.css">
-    <link rel="stylesheet" href="corsi.css">
     <link href="../css/templatemo-diagoona.css" rel="stylesheet"/>
     <title>Portale</title>
+   
+    <link rel="stylesheet" href="portale.css">
+    <link rel="stylesheet" href="corsi/corsi.css">
+    <link rel="stylesheet" href="visualizza/visualizza.css">
+    <link rel="stylesheet" href="storia/storia.css">
+    <link rel="stylesheet" href="esercizi/esercizi.css">
+
+    
+   
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    
+    
     <script src="../sessionControl/sessionControl.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="visualizza.css">
+    <script src="esercizi/esercizi.js"></script>
+
+    
     <!-- style per navbar#Parte Destra-->
     <style>
       #dynamicZone a{
@@ -43,7 +55,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="#" ><i class="fas fa-code"></i> Project Coding <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="/portale/portale.html" ><i class="fas fa-code"></i>  ProjectCode<span class="sr-only">(current)</span></a>
                 </li>
               </ul>
             </div>
@@ -62,12 +74,12 @@
                <!-- dropdown java-->
                <div class="btn-barra">
                  
-                 <li></i><a href="#" id="btn-java"><i class="fab fa-java fa-sm" ></i><span >JAVA</span> <em class="logo-freccia"><i id="freccia-java" class="fas fa-caret-down"></i></em></li>
+                 <li></i><a href="#" id="btn-java"><i class="fab fa-java fa-sm" ></i><span>JAVA</span> <em class="logo-freccia"><i id="freccia-java" class="fas fa-caret-down"></i></em></li>
                </div>
                 <div id="contenitore-drop">
                   <ul class="li-java-off" id="lista-java">
-                    <li><a href="#"  name="pulsante-corsi" id="lezioni-java" onclick="caricaPagina('lezioni-java','corsi')">Lezioni</a></li>
-                    <li><a href="#" id="storia-java">Storia</a></li>
+                    <li><a href="#"  name="pulsante-corsi" id="lezioni-java" onclick="caricaPagina('lezioni-java','corsi','java')">Lezioni</a></li>
+                    <li><a href="#" id="storia-java" onclick="caricaPagina('storia-java','storia','java')">Storia</a></li>
                     <li><a href="#">Documentazione</a></li>
                     <li><a href="#">Novità</a></li>
                   </ul>
@@ -122,16 +134,36 @@
     $("#contenitore").toggleClass("li-python-on");
     direzioneFreccia($("#freccia-python"));
     });
-
  
-      function caricaPagina(id,tipo){
-      $("#dynam").empty();
-      $("#dynam").load(tipo+ ".html ." + id);
-      }
+  function caricaPagina(id,tipo,cambio){
+  $("#dynam").empty();
+  $("#dynam").load( tipo + "/" + tipo + ".html ." + id);
+  if (cambio){
+    var back = $(".contenitore-fluid").css("background-image") ;
+    back=back.slice(back.lastIndexOf("/")+1,-6)
+    if ( back != cambio){
+      if(cambio=="blank"){
+        $(".contenitore-fluid").css("background-image" , "unset");
+        $(".contenitore-fluid").css("background-color" , "black");
+      } else
+        $(".contenitore-fluid").css("background-image" , "url('../img/" + cambio +".png')")};
+    }
+  }
+
    
     /* Da modificare, con interazioni bottoni */
     $(document).ready(function(){
+ 
       });
+     
+    
+    function caricaVideo(arg){
+        alert("enter");
+        $("#zonaVideo").addClass("show");
+        $("#videoLezione").attr("src", "https://www.youtube.com/embed/"+ arg +"?controls=0");
+    }
     </script>
+
+  
 </body>
 </html>

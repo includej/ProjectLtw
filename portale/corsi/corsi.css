@@ -1,0 +1,149 @@
+.contenitore-fluid{
+    padding-top: 10px;
+    padding-bottom: 60px;
+    position: relative;
+    width: 100%;   /*da rivedere*/
+    height: 100%;
+    padding-left: 220px;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+
+}
+
+
+.contenitore-fluid div{
+    margin-bottom: 30px;
+}
+
+.link-corso{
+    position: relative;
+    text-decoration: none;
+    width: 99%;
+    height: 260px;
+    display:inline-block;
+    color: black;
+    border-color: rgb(190, 10, 10);
+    border-width: 1px;
+    background-color: white;
+    border-radius: 20px;
+    opacity: 0.9;
+}
+.lezioni-java div a:hover{
+   
+    color: green;
+}
+
+.img-fluid{
+    position: relative;
+    height: 200px;
+    width: 380px;
+    margin-bottom: 30px;
+    margin-top:30px;
+    margin-left:30px;
+    border-radius: 10px;
+}
+.contenitore-fluid div a:hover{
+    color: initial;
+}
+
+.link-corso div span{
+    position: absolute;
+    top: 150px;
+    left: 50px;
+    z-index: 1;
+    color: white;
+}
+
+
+.divIntro {
+    font-family: 'Poppins'; 
+    position: absolute; 
+    left: 440px; 
+    font-weight: bold; 
+    top: 90px; 
+    width: calc(100% - 520px);
+}
+
+.divAttiv{
+    font-family: 'Poppins';    
+    position: absolute; 
+    left: 440px; 
+    top: 165px; 
+    width: calc(100% - 520px);
+}
+
+.divProg{
+    position: absolute;
+    left: 440px; 
+    top: 200px; 
+    width: calc(100% - 520px);
+}
+
+@media (max-width:950px) and (min-width:751px){
+    .link-corso {
+        height: auto;
+        display: block;
+    }
+    .divIntro {
+        top: -30px;
+        position: relative;
+        left: 35px;
+        width: unset;
+    }
+
+    .divAttiv {
+        position: relative;
+        top: -50px;
+        left: 35px;
+        display: inline;
+    }
+
+    .divProg{
+        position: absolute;
+        left: 50px;
+        top: 325px;
+        width: calc(90vw - 15rem);
+    }
+}
+
+@media (max-width:750px){
+    .divIntro h1{
+        font-size: 5.3vw;
+    }
+
+    .link-corso div .divNumb{
+        top: calc(26.2vw - 3rem);
+        font-size: calc(7.1vw - 1.2rem);
+    }
+
+    .contenitore-visualizza .divNumb{
+        top: calc(26.2vw - 3rem);
+        font-size: calc(7.1vw - 1.2rem);
+    }
+
+    .link-corso {
+        height: auto;
+        display: block;
+    }
+    .divIntro {
+        top: -30px;
+        position: relative;
+        left: 35px;
+        width: unset;
+    }
+
+    .divAttiv {
+        position: relative;
+        top: -50px;
+        left: 35px;
+        display: inline;
+    }
+
+    .divProg{
+        position: absolute;
+        left: 50px;        
+        top: calc(49.8vw - 3rem);
+        width: calc(100vw - 20rem);
+    }
+}

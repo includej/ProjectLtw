@@ -1,0 +1,19 @@
+.terminale {
+    min-width: 5px;
+    display: inline-block;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 0.85em;
+    letter-spacing: 1.5px;
+    color: #20C20E;
+  }
+  
+  .esercizio-java-00 {
+    background:transparent;
+    position: relative;
+  } 
+  
+  
+  .text {
+    overflow: hidden;
+    height: auto;
+  } 

@@ -1,0 +1,59 @@
+.contenitore-visualizza{
+    position: relative;
+    width: 99%;
+    height: 600px;
+    display:inline-block;
+    color: black;
+    border-color: rgb(190, 10, 10);
+    border-width: 1px;
+    background-color: white;
+    border-radius: 20px;
+    
+} 
+.contenitore-visualizza div span{
+position: absolute;
+    top: 150px;
+    left: 50px;
+    z-index: 1;
+    color: white;
+}
+
+.contenitore-gen{
+  padding-left: 2rem; 
+  padding-right: 2rem; 
+  padding-top: 1rem; 
+  background-color:unset; 
+  height: auto; 
+  border-radius: 25px;
+}
+
+.barra-progressi{
+  position: absolute; 
+  left: 440px; 
+  top: 200px; 
+  width: calc(100% - 520px);
+}
+
+.contenitore-fluid div .row a{
+    margin-bottom: unset; 
+    height: 10px;
+    color: initial;
+}
+
+@media (max-width: 768px) {
+    .btn-responsive {
+      padding:2px 4px;
+      font-size:80%;
+      line-height: 1;
+      border-radius:3px;
+    }
+}
+  
+@media (min-width: 769px) and (max-width: 992px) {
+    .btn-responsive {
+      padding:4px 9px;
+      font-size:90%;
+      line-height: 1.2;
+    }
+  }
+  
