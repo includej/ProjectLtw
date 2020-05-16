@@ -13,7 +13,8 @@
     <link href="../css/templatemo-diagoona.css" rel="stylesheet"/>
     <title>Portale</title>
     <script src="../sessionControl/sessionControl.js"></script>
-
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="visualizza.css">
     <!-- style per navbar#Parte Destra-->
     <style>
       #dynamicZone a{
@@ -25,6 +26,10 @@
         color: #9CC;
         transition: 0.3s;
         background:unset;
+      }
+
+      .container-fluid .row a:hover{
+        color: black;
       }
     </style>
 
@@ -56,11 +61,12 @@
              <ul class="barra-lat">
                <!-- dropdown java-->
                <div class="btn-barra">
+                 
                  <li></i><a href="#" id="btn-java"><i class="fab fa-java fa-sm" ></i><span >JAVA</span> <em class="logo-freccia"><i id="freccia-java" class="fas fa-caret-down"></i></em></li>
                </div>
                 <div id="contenitore-drop">
                   <ul class="li-java-off" id="lista-java">
-                    <li><a href="#" id="lezioni-java">Lezioni</a></li>
+                    <li><a href="#"  name="pulsante-corsi" id="lezioni-java" onclick="caricaPagina('lezioni-java','corsi')">Lezioni</a></li>
                     <li><a href="#" id="storia-java">Storia</a></li>
                     <li><a href="#">Documentazione</a></li>
                     <li><a href="#">Novità</a></li>
@@ -72,7 +78,7 @@
                 </div>
                 <div id="contenitore-drop">
                   <ul class="li-python-off" id="lista-python">
-                    <li><a href="#">Storia</a></li>
+                    <li><a href="#" name="pulsante-corsi" id="lezioni-python">Storia</a></li>
                     <li><a href="#">Documentazione</a></li>
                     <li><a href="#">Novità</a></li>
                     </ul>
@@ -116,17 +122,16 @@
     $("#contenitore").toggleClass("li-python-on");
     direzioneFreccia($("#freccia-python"));
     });
+
  
+      function caricaPagina(id,tipo){
+      $("#dynam").empty();
+      $("#dynam").load(tipo+ ".html ." + id);
+      }
+   
     /* Da modificare, con interazioni bottoni */
     $(document).ready(function(){
-      $("#lezioni-java").click(function(){
-        $("#dynam").load("corsi.html #corso-java");
+      caricaPagina("ciao","visualizza");
       });
-      $("#storia-java").click(function(){
-        $("#dynam").empty();
-      });
-    });
     
-    </script>
-</body>
 </html>

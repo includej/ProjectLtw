@@ -25,7 +25,7 @@
 
         <div class="register-box">
             <h2>Iscriviti</h2>
-            <form id="registr" name="registr">
+            <form id="registr" name="registr" onSubmit="return ajaxvalid()">
                 <div class="user-box">
                     <input type="text" name="nome" id="nome" required>
                     <label>Nome</label>
@@ -52,45 +52,23 @@
                 </div>
             </form>
         </div>
-        <script>
-            $(document).ready(function(){
-                $("#sub_btn").click(function(e){        //Al click del bottone
-                    e.preventDefault();               //Cancella la funzione Submit
-                    //$("#registr").validate();           //Valida i campi, cercando i required  /*Da rivedere*/
-                    
-                    //Variabili
-                    var nome = $("#nome").val().trim();
-                    var cognome = $("#cognome").val().trim();
-                    var inEmail = $("#inEmail").val().trim();
-                    var username = $("#username").val().trim();
-                    var password = $("#password").val().trim();
-                    
-
-                    if (nome!="" && cognome!="" && inEmail!="" && username!="" && password!=""){    //Controllo ulteriore se campi sono vuoti
-                        $.ajax("register.php", {      //Richiesta AJAX(formato JQUERY)
-                            type:'POST',
-                            data: $("#registr").serialize(),
-                        })
-                        .done(function(res){                        //In caso di risposta da richiesta AJAX
-                            if (res!='0'){
-                                $("#variabile").html(res);
-                                $("#variabile").addClass("alert alert-danger");
-                            } else {
-                                $("#variabile").removeClass("alert-danger");
-                                $("#variabile").addClass("alert alert-success");
-                                $("#variabile").html("Registrazione avvenuta con successo!");
-                                setTimeout(function(){window.location="../index.html";}, 3000);
-                            }
-                        })
-                        .failure(function(data){                    //In caso di richiesta AJAX Fallita
-                            alert('aia');
-                        })
-                        .error(function(err){
-                            alert("erroe");
-                        });
-                    };
+        <script>           
+            function ajaxvalid(){
+                $.post("register.php", $("#registr").serialize(), function(data, status, xhr){
+                    if(data!='0'){
+                        alert("enter");
+                        $("#variabile").html(data);
+                        $("#variabile").addClass("alert alert-danger");
+                    } else {
+                        alert("quit");
+                        $("#variabile").removeClass("alert-danger");
+                        $("#variabile").addClass("alert alert-success");
+                        $("#variabile").html("Registrazione avvenuta con successo!");
+                        setTimeout(function(){window.location="../index.html";}, 3000);
+                    }
                 });
-            });
+                return false;
+            }
         </script>
     </body>
 </html>

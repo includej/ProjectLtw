@@ -1,5 +1,6 @@
 .contenitore-fluid{
     padding-top: 10px;
+    padding-bottom: 60px;
     position: relative;
     width: 100%;   /*da rivedere*/
     height: 100%;
@@ -8,8 +9,8 @@
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
-}
 
+}
 
 
 .contenitore-fluid div{
@@ -37,5 +38,20 @@
     margin-bottom: 30px;
     margin-top:30px;
     margin-left:30px;
-    border-radius: 20px;
+    border-radius: 10px;
+}
+.contenitore-fluid div a:hover{
+    color:white;
+}
+
+.link-corso div span{
+    position: absolute;
+    top: 150px;
+    left: 50px;
+    z-index: 1;
+    color: white;
+}
+
+#testo_java :hover{
+    color: initial;
 }
