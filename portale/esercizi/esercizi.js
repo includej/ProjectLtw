@@ -83,7 +83,5 @@ function checkA(){
     return false;
   }
   $("#btn-form").css("border-color", "green");
-  setTimeout(caricaPagina('lezioni-java','corsi','java'), 5000);
-  alert("succesfull");
   return false;
 }
