@@ -44,8 +44,8 @@
 }
 */
 
-function terminale2() {
-  for(i = 1; i < 3; i++){
+function terminale() {
+  for(i = 1; i < 4; i++){
     var printText = $('.text'+i).data('text');
     var contentArray = printText.split('/n');
     $.each(contentArray, function(index, newLine) {
@@ -57,11 +57,38 @@ function terminale2() {
           $.each(self, function(index, chunk){
               setTimeout(function () {
                 $("#"+lineID).append("<span>"+chunk+"</span>");
-                $('.classe-terminale2').scrollTop($(document).height());
+                $('.classe-terminale').scrollTop($(document).height());
               }, index*60);
           });
 
         }, index*100);
     });
   }
+}
+
+function checkA(){
+  var ArrayR = new Array($('#risposta1').data('text'),$('#risposta2').data('text'),$('#risposta3').data('text'));
+  var esatte = 0;
+  alert("scemo");
+  for(i = 1; i < 4 ; i++){
+    alert(i + "  -  " + $("#risposta"+i.toString()).val());
+    alert(ArrayR[i],$("#risposta"+i.toString()).val());
+    if (ArrayR[i] == $("#risposta"+i.toString()).val()) {
+      
+      esatte++;
+      $("#risposta"+i.toString()).attr('disabled','disabled');
+      $("#risposta"+i.toString()).css("border-color", "green");
+    } else {
+      alert("false - sbagliato");
+      $("#risposta"+i.toString()).css("border-color", "red");
+    }
+  }
+  if ( esatte < 3){
+    alert("false");
+    $("#btn-form").css("border-color", "red");
+    return false;
+  }
+  $("#btn-form").css("border-color", "green");
+  alert("true");
+  return true;
 }

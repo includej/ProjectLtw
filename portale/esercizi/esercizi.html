@@ -1,50 +1,104 @@
+<div class="esercizio-java-00">   
+    
+    <!-- bottone per tornare indietro -->
+    <button  class="btn btn-dark btn-responsive" onclick="caricaPagina('visualizza-0-java','visualizza','java')" style="margin-bottom: 0px; border-radius: 100px; transition: 0.5s;"><i class="fas fa-long-arrow-alt-left"></i> Torna indietro </button>
+    <form method="POST" onsubmit="return checkA()">
 
-    <div class="esercizio-java-00">   
-        <!-- bottone per tornare indietro -->
-        <button  class="btn btn-dark btn-responsive" onclick="caricaPagina('visualizza-0-java','visualizza','java')" style="margin-bottom: 0px; border-radius: 100px; transition: 0.5s;"><i class="fas fa-long-arrow-alt-left"></i> Torna indietro </button>
-        <div class="container-fluid" style="margin-top: 150px">
-            <div class="row">
-                <div class="col-1"></div>
-                <div class="col-5" style="border: 2px solid white; border-radius: 0px;">                
-                    <p class="text1 classe-terminale1" data-text="class Simple{/n   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public static void main(String args[]){/n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println('Hello Java');/n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}/n}" ;  
-                        }  
-                    }  
-                    ></p>
-                </div>
-                <div class="col-1" >
-                </div>
-                <div class="col-4" style="border: 2px solid white; border-radius: 0px;" >
-                    <h1>Come si dice PORT?</h1>
-                    <br>
-                    <div   style="left: 20px">
-                    <input type="radio" id="risposta">PORTO
-                    <input type="radio" id="risposta">PORTA
-                    <input type="radio" id="risposta">PORT
-                    <input type="radio" id="risposta">PORCO
-                    </div>
-                </div>     
-                <div class="col-1" >
-                </div>
+    <!-- container esercizi -->
+    <div class="container-fluid" style="margin-top: 30px">
+
+        <!-- PRIMO ESERCIZIO-->
+
+        <!-- Label esercizio -->
+        <div class="row" style="margin: 0; height: auto;">
+            <div class="col-1"></div>
+            <div class="col-10">Esercizio 1</div>
+            <div class="col-1"></div>
         </div>
-        <div class="container-fluid" style="margin-top: 150px">
-            <div class="row">
-                <div class="col-1"></div>
-                <div class="col-5" style="border: 2px solid white; border-radius: 0px;">                
-                    <p class="text2 classe-terminale2" data-text="cssawdwad awdwadwadwadwadwa{/n   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public static void main(String args[]){/n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println('Hello Java');/n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}/n&nbsp;&nbsp;}"></p>
-                </div>
-                <div class="col-1" >
-                </div>
-                <div class="col-4" style="border: 2px solid white; border-radius: 0px;" >
-                    <h1>Come si dice PORT?</h1>
-                    <br>
-                    <div   style="left: 20px">
-                    <input type="radio" id="risposta">PORTO
-                    <input type="radio" id="risposta">PORTA
-                    <input type="radio" id="risposta">PORT
-                    <input type="radio" id="risposta">PORCO
-                    </div>
-                </div>     
-                <div class="col-1" >
-                </div>
+        
+        <!-- Zona terminale + esercizio -->
+        <div class="row">
+
+            <!-- colonna vuota (per spazio sinistra)-->
+            <div class="col-md-1 col-sm-2"></div>
+
+            <!-- terminale -->
+            <div class="col-md-5 col-sm-10" style="border: 2px solid white; border-radius: 0px;">                
+                <p class="text1 classe-terminale1 terminale" data-text="1: class HelloRosati{/n2:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public static void main(String args[]){/n3:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println('Hello Java');/n4:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}/n5:}"></p>
+            </div>
+
+            <!-- colonna vuota (per spazio centrale) -->
+            <div class="col-md-1 col-sm-2" > </div>
+            
+            <!-- zona Esercizio -->
+            <div class="col-md-4 col-sm-8" style="border: 2px solid white; border-radius: 0px;" >
+                <input id="risposta1" data-text="porto"></input>
+            </div>
+
+            <!-- Colonna vuosta (per spazio destra)-->
+            <div class="col-md-1 col-sm-2" ></div>
+
+        </div>
+
+
+
+        
+        <!-- SECONDO ESERICIZIO -->
+
+        <!-- Label esercizio -->
+        <div class="row" style="margin: 0; height: auto;">
+            <div class="col-1"></div>
+            <div class="col-10">Esercizio 2</div>
+            <div class="col-1"></div>
+        </div>
+
+        <!-- Zona terminale + esercizio -->
+        <div class="row">
+
+            <!-- colonna vuota (per spazio sinistra)-->
+            <div class="col-md-1 col-sm-2"></div>
+
+            <!-- terminali -->
+            <div class="col-md-5 col-sm-10" style="border: 2px solid white; border-radius: 0px;">                
+                <p class="text2 classe-terminale2 terminale" data-text="1: class PortoIsDaNewPort{/n2:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public static void main(String args[]){/n3:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println('Hello Rosati');/n4:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}/n5:}"></p>
+            </div>
+
+            <!-- colonna vuota (per spazio) -->
+            <div class="col-md-1 col-sm-2" > </div>
+            
+            <!-- zona completamento-->
+            <div class="col-md-4 col-sm-8" style="border: 2px solid white; border-radius: 0px;" >
+                <input id="risposta2" data-text="porto"></input>
+            </div>
+            <div class="col-md-1 col-sm-2" ></div>
+            
+        </div>
+        
+        
+        <!-- TERZO ESERCIZIO -->
+        <div class="row" style="margin: 0; height: auto;">
+            <div class="col-1"></div>
+            <div class="col-10">Esercizio 3</div>
+            <div class="col-1"></div>
+        </div>
+        <div class="row">
+            <!-- colonna vuota (per spazio sinistra)-->
+            <div class="col-md-1 col-sm-2"></div>
+            <!-- terminali -->
+            <div class="col-md-5 col-sm-10" style="border: 2px solid white; border-radius: 0px;">                
+                <p class="text3 classe-terminale3 terminale" data-text="1: class Simple{/n2:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public static void main(String args[]){/n3:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println('Hello Porto');/n4:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}/n5:}"></p>
+            </div>
+
+            <!-- colonna vuota (per spazio) -->
+            <div class="col-md-1 col-sm-2" > </div>
+            
+            <!-- zona completamento-->
+            <div class="col-md-4 col-sm-8" style="border: 2px solid white; border-radius: 0px;" >
+                <input id="risposta3" data-text="porto"></input>
+            </div>
+            <div class="col-md-1 col-sm-2" ></div>
         </div>
     </div>
+    <input type="submit" class="btn" id="btn-form" style="background-color: white;" value="INVIA">
+    </form>
+</div>

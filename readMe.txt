@@ -11,4 +11,9 @@ Creati file :
 
 
 -register login
--storia linea del tempo
+
+
+-esercizi
+-shop
+-bottoni index
+-pulizia codice (templatemoo)

@@ -5,15 +5,16 @@
     font-size: 0.85em;
     letter-spacing: 1.5px;
     color: #20C20E;
-  }
-  
-  .esercizio-java-00 {
-    background:transparent;
-    position: relative;
-  } 
-  
-  
-  .text {
-    overflow: hidden;
-    height: auto;
-  } 
+}
+
+.esercizio-java-00 {
+  background:transparent;
+  position: relative;
+} 
+
+
+.text {
+  overflow: hidden;
+  height: auto;
+} 
+
