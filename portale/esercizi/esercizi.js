@@ -69,26 +69,21 @@ function terminale() {
 function checkA(){
   var ArrayR = new Array($('#risposta1').data('text'),$('#risposta2').data('text'),$('#risposta3').data('text'));
   var esatte = 0;
-  alert("scemo");
   for(i = 1; i < 4 ; i++){
-    alert(i + "  -  " + $("#risposta"+i.toString()).val());
-    alert(ArrayR[i],$("#risposta"+i.toString()).val());
-    if (ArrayR[i] == $("#risposta"+i.toString()).val()) {
-      
+    if (ArrayR[i-1] == $("#risposta"+i.toString()).val()) {      
       esatte++;
       $("#risposta"+i.toString()).attr('disabled','disabled');
       $("#risposta"+i.toString()).css("border-color", "green");
     } else {
-      alert("false - sbagliato");
       $("#risposta"+i.toString()).css("border-color", "red");
     }
   }
   if ( esatte < 3){
-    alert("false");
     $("#btn-form").css("border-color", "red");
     return false;
   }
   $("#btn-form").css("border-color", "green");
-  alert("true");
-  return true;
+  setTimeout(caricaPagina('lezioni-java','corsi','java'), 5000);
+  alert("succesfull");
+  return false;
 }

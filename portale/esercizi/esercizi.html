@@ -2,7 +2,7 @@
     
     <!-- bottone per tornare indietro -->
     <button  class="btn btn-dark btn-responsive" onclick="caricaPagina('visualizza-0-java','visualizza','java')" style="margin-bottom: 0px; border-radius: 100px; transition: 0.5s;"><i class="fas fa-long-arrow-alt-left"></i> Torna indietro </button>
-    <form method="POST" onsubmit="return checkA()">
+    <form method="POST">
 
     <!-- container esercizi -->
     <div class="container-fluid" style="margin-top: 30px">
@@ -99,6 +99,6 @@
             <div class="col-md-1 col-sm-2" ></div>
         </div>
     </div>
-    <input type="submit" class="btn" id="btn-form" style="background-color: white;" value="INVIA">
+    <input onclick="checkA()"  class="btn" id="btn-form" style="background-color: white;" value="INVIA">
     </form>
 </div>
