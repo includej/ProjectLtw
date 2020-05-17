@@ -40,11 +40,11 @@
 </head>
 <body>
     <div id="contenitore">
+      <div id="container-fluid">
 
-        <!-- navbar -->
-        <div id="container-fluid" >
+        <!-- Navbar -->
         <nav class="navbar navbar-expand navbar-dark bg-dark" id="nav" >
-            <a class="navbar-brand" href="#"></a>
+          <a class="navbar-brand" href="#"></a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
@@ -52,6 +52,7 @@
                 </li>
               </ul>
             </div>
+
             <!-- parte dinamica navbar#Parte Destra-->
             <div class="nav-item" style="display: flex" id="dynamicZone">
               <div id="userZone_2" style="margin-right:5px;"></div>
@@ -73,7 +74,7 @@
                   <ul class="li-java-off" id="lista-java">
                     <li><a href="#"  name="pulsante-corsi" id="lezioni-java" onclick="caricaPagina('lezioni-java','corsi','java')">Lezioni</a></li>
                     <li><a href="#" id="storia-java" onclick="caricaPagina('storia-java','storia','java')">Storia</a></li>
-                    <li><a href="#">Documentazione</a></li>
+                    <li><a href="#" onclick="caricaPagina('documentazione-java','documentazione','java')">Documentazione</a></li>
                     <li><a href="#">Novità</a></li>
                   </ul>
                 </div>
@@ -92,70 +93,10 @@
         </div>
         <!-- Contenuto pagina -->
           <div class="contenitore-fluid" id="dynam" style="flex: 1; overflow-y: scroll;">
-        </div>
-      </div>
-
-         
-
-    
-    
-    <!-- scrip barra -->
-    <script>
-    function direzioneFreccia(freccia){;
-        if ($(freccia).attr("class") == "fas fa-caret-down"){
-          $(freccia).removeClass("fas fa-caret-down");
-          $(freccia).addClass("fas fa-caret-up");
-        }
-        else{
-          $(freccia).removeClass("fas fa-caret-up");
-          $(freccia).addClass("fas fa-caret-down");
-        }
         
-    }
-    /*$("#btn-menu").click(function (e) {
-    e.preventDefault();
-    $("#contenitore").toggleClass("menu-on");
-    $("#contenitore-pagina").toggleClass("contenuto-pagina-destra");
-    });*/
-    $("#btn-java").click(function (e) {
-    e.preventDefault();
-    $("#contenitore").toggleClass("li-java-on");
-    direzioneFreccia($("#freccia-java"));
-    });
-    $("#btn-python").click(function (e) {
-    e.preventDefault();
-    $("#contenitore").toggleClass("li-python-on");
-    direzioneFreccia($("#freccia-python"));
-    });
- 
-  function caricaPagina(id,tipo,cambio){
-  $("#dynam").empty();
-  $("#dynam").load( tipo + "/" + tipo + ".html ." + id);
-  if (cambio){
-    var back = $(".contenitore-fluid").css("background-image") ;
-    back=back.slice(back.lastIndexOf("/")+1,-6)
-    if ( back != cambio){
-      if(cambio=="blank"){
-        $(".contenitore-fluid").css("background-image" , "unset");
-        $(".contenitore-fluid").css("background-color" , "black");
-      } else
-        $(".contenitore-fluid").css("background-image" , "url('../img/" + cambio +".png')")};
-    }
-  }
+          </div>
 
-   
-    /* Da modificare, con interazioni bottoni */
-    $(document).ready(function(){
- 
-      });
-     
-    
-    function caricaVideo(arg){
-        alert("enter");
-        $("#zonaVideo").addClass("show");
-        $("#videoLezione").attr("src", "https://www.youtube.com/embed/"+ arg +"?controls=0");
-    }
-    </script>
+      </div>
 
   
 </body>

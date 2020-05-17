@@ -5,68 +5,85 @@
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="stylesheet" href="register.css" type="text/css">
         <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
-
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>                <!-- librerire per toogle -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>         
         <link href="../css/templatemo-diagoona.css" rel="stylesheet" />
-        <script src="../js/templatemo-script.js"></script>    
-
-        <script type="text/javascript" lang="javascript" src="register.js"></script>
-        <title>
-            Iscriviti
-        </title>
+        <script src="../js/templatemo-script.js"></script>
+        <script type="text/javascript" lang="javascript" src="register.js"></script>            <!-- js per la registrazione -->
+        <title>Iscriviti</title>
     </head>
+
     <body>
-    
-
-
+        <!-- Block per la registrazione -->
         <div class="register-box">
             <h2>Iscriviti</h2>
+
+            <!-- Form -->
             <form id="registr" name="registr" onSubmit="return ajaxvalid()">
+
+                <!-- Sezione Nome -->
                 <div class="user-box">
                     <input type="text" name="nome" id="nome" required>
                     <label>Nome</label>
                 </div>
+
+                <!-- Sezione Cognome -->
                 <div class="user-box">
                     <input type="text" name="cognome" id="cognome" required>
                     <label>Cognome</label>
                 </div>
+
+                <!-- Sezione Email -->
                 <div class="user-box">
                     <input type="text" name="inEmail" id="inEmail" required>
                     <label>Email</label>
                 </div>
+
+                <!-- Sezione Username -->
                 <div class="user-box">
                     <input type="username" name="username" id="username" required>
                     <label>Username</label>
                 </div>
+
+                <!-- Sezione Password -->
                 <div class="user-box">
                     <input type="password" name="password" id="password" required>
                     <label>Password (Almeno 6 caratteri)</label>
                 </div>
+
+                <!-- Sezione Password -->
                 <div id="variabile" class="text-center"></div>
+
+                <!-- Bottone per la submit, che fa partire la funzione -->
                 <div class="submit-btn">
                     <input type="submit" value="Submit" id="sub_btn">
                 </div>
             </form>
         </div>
-        <script>           
+
+        <!-- Script -->
+        <script>
+            // AjaxValid() - per controllare se l'utente è gia registrato
             function ajaxvalid(){
                 $.post("register.php", $("#registr").serialize(), function(data, status, xhr){
                     if(data!='0'){
-                        alert("enter");
+
+                        // Caso: Registrazione fallita
                         $("#variabile").html(data);
                         $("#variabile").addClass("alert alert-danger");
                     } else {
-                        alert("quit");
+
+                        // Caso: Registrazione avvenuta con successo
                         $("#variabile").removeClass("alert-danger");
                         $("#variabile").addClass("alert alert-success");
                         $("#variabile").html("Registrazione avvenuta con successo!");
                         setTimeout(function(){window.location="../index.html";}, 3000);
                     }
                 });
+
+                // Ritorna sempre false, per bloccare il reindirizzamento della submit
                 return false;
             }
         </script>

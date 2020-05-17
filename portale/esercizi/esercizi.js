@@ -70,11 +70,21 @@ function checkA(){
   var ArrayR = new Array($('#risposta1').data('text'),$('#risposta2').data('text'),$('#risposta3').data('text'));
   var esatte = 0;
   for(i = 1; i < 4 ; i++){
-    if (ArrayR[i-1] == $("#risposta"+i.toString()).val()) {      
+    if (ArrayR[i-1] == $("#risposta"+i.toString()).val().replace(/"/g, "'")){    
       esatte++;
       $("#risposta"+i.toString()).attr('disabled','disabled');
       $("#risposta"+i.toString()).css("border-color", "green");
+
+      $("#variabile"+i.toString()).removeClass("alert-danger");
+      $("#variabile"+i.toString()).addClass("alert alert-success");
+      $("#variabile"+i.toString()).html("Risposta Corretta!");
     } else {
+      if($("#risposta"+i.toString()).val())
+        $("#variabile"+i.toString()).html("Risposta Sbagliata!");
+      else
+        $("#variabile"+i.toString()).html("Inserire Risposta!");
+      $("#variabile"+i.toString()).addClass("alert alert-danger");
+
       $("#risposta"+i.toString()).css("border-color", "red");
     }
   }

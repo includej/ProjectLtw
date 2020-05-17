@@ -13,7 +13,9 @@ Creati file :
 -register login
 
 
--esercizi
+
 -shop
 -bottoni index
 -pulizia codice (templatemoo)
+
+-bottone esercizi

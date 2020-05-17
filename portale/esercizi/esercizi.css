@@ -18,3 +18,20 @@
   height: auto;
 } 
 
+.divComp {
+  border: 2px solid white;
+  border-radius: 0px; 
+  padding:10px; 
+  text-align:center
+}
+
+.divComp .inRisp{
+  width: inherit;
+  background-color:white;
+  text-align:center
+}
+
+.divComp .divRisp{
+  transition: 0.5s;
+  margin-top: 20px
+}
