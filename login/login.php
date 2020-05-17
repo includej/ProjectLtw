@@ -17,6 +17,10 @@
       if($count == 1) {
         //Dentro la var globale SESSION, viene creato una var con value=myusername
         session_start();
+        
+        $array = file_get_contents('../server/progressi.json'); 
+        $array = json_decode($array, true);
+        define("_PROGRESSI", $array[$myusername]);
         $_SESSION['username'] = $myusername;
         header("Location: ../index.html");
       } else {      //  Da implementare meglio con AJAX

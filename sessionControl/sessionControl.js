@@ -26,3 +26,10 @@ $(document).ready(function(){
         }
     }
 });
+
+function isLogged(){
+    $.post("sessionControl.php", function(data){
+        if(data)
+            return data;
+    });
+}

@@ -1,5 +1,3 @@
-Controlli : Js  Username register
-
 v1.0.4
 Sistemata parte database.
 Creati file :
@@ -11,11 +9,9 @@ Creati file :
 
 
 -register login
-
-
-
 -shop
 -bottoni index
 -pulizia codice (templatemoo)
-
 -bottone esercizi
+
+ register->portale->

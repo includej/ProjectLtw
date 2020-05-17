@@ -18,6 +18,41 @@
             if ($result){
 
                 // Registrazione avvenuta con successo
+
+                //  Aggiunto utente per registrazione progressi
+                $array = file_get_contents('../server/progressi.json');
+ 
+            
+                $array = json_decode($array, true);
+              
+                
+               
+                $array +=  [$user => ["java" => [
+                    "corso0" => [0, 0, 0, 0],
+                    "corso1" => [0, 0, 0, 0],
+                    "corso2" => [0, 0, 0, 0],
+                    "corso3" => [0, 0, 0, 0],
+                    "corso4" => [0, 0, 0, 0],
+                    "corso5" => [0, 0, 0, 0],
+                    "corso6" => [0, 0, 0, 0]
+                ],
+                    "python" =>
+                [
+                    "corso0" => [0, 0, 0, 0],
+                    "corso1" => [0, 0, 0, 0],
+                    "corso2" => [0, 0, 0, 0],
+                    "corso3" => [0, 0, 0, 0],
+                    "corso4" => [0, 0, 0, 0],
+                    "corso5" => [0, 0, 0, 0],
+                    "corso6" => [0, 0, 0, 0]
+                    ]
+                ]
+                ];
+                //The end result.
+                $array = json_encode($array);
+                file_put_contents('../server/progressi.json', $array);    
+
+                // Return invio con success
                 echo 0;
             }else{
 

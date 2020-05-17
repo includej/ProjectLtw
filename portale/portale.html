@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+  <head> 
     <title>Portale</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,86 +18,88 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="../sessionControl/sessionControl.js"></script>
     <script src="esercizi/esercizi.js"></script>
-    
+ 
+    <script src="portale.js"></script>
+   
+
     <!-- style per navbar#Parte Destra-->
     <style>
       #dynamicZone a{
         color:white;
         font-weight: bolder;
       }
-
       #dynamicZone a:hover{
         color: #9CC;
         transition: 0.3s;
         background:unset;
       }
-
       .container-fluid .row a:hover{
         color: black;
       }
     </style>
+  </head>
 
-</head>
-<body>
+  <body>
     <div id="contenitore">
       <div id="container-fluid">
 
         <!-- Navbar -->
         <nav class="navbar navbar-expand navbar-dark bg-dark" id="nav" >
           <a class="navbar-brand" href="#"></a>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="/portale/portale.html" ><i class="fas fa-code"></i>  ProjectCode<span class="sr-only">(current)</span></a>
-                </li>
-              </ul>
-            </div>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
 
-            <!-- parte dinamica navbar#Parte Destra-->
-            <div class="nav-item" style="display: flex" id="dynamicZone">
-              <div id="userZone_2" style="margin-right:5px;"></div>
-              <div id="userZone_0"></div>              
-              <div id="userZone_1"></div>
-            <div>
-          </nav>
-        </div>
-
-         <!-- Barra laterale -->
-         <div id="contenitore-barra">
-             <ul class="barra-lat">
-               <!-- dropdown java-->
-               <div class="btn-barra">
-                 
-                 <li></i><a href="#" id="btn-java"><i class="fab fa-java fa-sm" ></i><span>JAVA</span> <em class="logo-freccia"><i id="freccia-java" class="fas fa-caret-down"></i></em></li>
-               </div>
-                <div id="contenitore-drop">
-                  <ul class="li-java-off" id="lista-java">
-                    <li><a href="#"  name="pulsante-corsi" id="lezioni-java" onclick="caricaPagina('lezioni-java','corsi','java')">Lezioni</a></li>
-                    <li><a href="#" id="storia-java" onclick="caricaPagina('storia-java','storia','java')">Storia</a></li>
-                    <li><a href="#" onclick="caricaPagina('documentazione-java','documentazione','java')">Documentazione</a></li>
-                    <li><a href="#">Novità</a></li>
-                  </ul>
-                </div>
-                <!-- dropdown python -->
-                <div class="btn-barra">
-                <li></i><a href="#" id="btn-python"><i class="fab fa-python fa-sm"></i><span >PYTHON</span> <em class="logo-freccia"><i id="freccia-python" class="fas fa-caret-down"></i></em></li>
-                </div>
-                <div id="contenitore-drop">
-                  <ul class="li-python-off" id="lista-python">
-                    <li><a href="#" name="pulsante-corsi" id="lezioni-python">Storia</a></li>
-                    <li><a href="#">Documentazione</a></li>
-                    <li><a href="#">Novità</a></li>
-                    </ul>
-                </div>
-                </ul>
-        </div>
-        <!-- Contenuto pagina -->
-          <div class="contenitore-fluid" id="dynam" style="flex: 1; overflow-y: scroll;">
-        
+                <!-- Logo -->
+                <a class="nav-link" href="/portale/portale.html" ><i class="fas fa-code"></i>  ProjectCode<span class="sr-only">(current)</span></a>
+              </li>
+            </ul>
           </div>
 
+          <!-- parte dinamica navbar#Parte Destra-->
+          <div class="nav-item" style="display: flex" id="dynamicZone">
+            <div id="userZone_2" style="margin-right:5px;"></div>
+            <div id="userZone_0"></div>              
+            <div id="userZone_1"></div>
+          <div>
+        </nav>
       </div>
 
-  
-</body>
+      <!-- Barra laterale -->
+      <div id="contenitore-barra">
+        <ul class="barra-lat">
+
+          <!-- dropdown java-->
+          <div class="btn-barra">                 
+            <li></i><a href="#" id="btn-java"><i class="fab fa-java fa-sm" ></i><span>JAVA</span> <em class="logo-freccia"><i id="freccia-java" class="fas fa-caret-down"></i></em></li>
+          </div>
+          <div id="contenitore-drop">
+            <ul class="li-java-off" id="lista-java">
+              <li><a href="#"  name="pulsante-corsi" id="lezioni-java" onclick="caricaPagina('lezioni-java','corsi','java'); setTimeout(progressiCorsi('java'),200)">Lezioni</a></li>
+              <li><a href="#" id="storia-java" onclick="caricaPagina('storia-java','storia','java')">Storia</a></li>
+              <li><a href="#" onclick="caricaPagina('documentazione-java','documentazione','java')">Documentazione</a></li>
+              <li><a href="#">Novità</a></li>
+            </ul>
+          </div>
+
+          <!-- dropdown python -->
+          <div class="btn-barra">
+          <li></i><a href="#" id="btn-python"><i class="fab fa-python fa-sm"></i><span >PYTHON</span> <em class="logo-freccia"><i id="freccia-python" class="fas fa-caret-down"></i></em></li>
+          </div>
+          <div id="contenitore-drop">
+            <ul class="li-python-off" id="lista-python">
+              <li><a href="#" name="pulsante-corsi" id="lezioni-python">Storia</a></li>
+              <li><a href="#">Documentazione</a></li>
+              <li><a href="#">Novità</a></li>
+              </ul>
+          </div>
+        </ul>
+      </div>
+
+      <!-- Contenuto pagina - Dinamica -->
+      <div class="contenitore-fluid" id="dynam" style="flex: 1; overflow-y: scroll;">        
+      </div>
+
+    </div>  
+  </body>
 </html>
