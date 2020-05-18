@@ -18,7 +18,6 @@
             if ($result){
 
                 // Registrazione avvenuta con successo
-
                 //  Aggiunto utente per registrazione progressi
                 $array = file_get_contents('../server/progressi.json');
  

@@ -1,11 +1,8 @@
 <?php
-
 //$array['java'] += ["port" => "ciao"];
 //Encode the array into a JSON string.
-
  
 //Save the JSON string to a text file.
-
  
 //Retrieve the data from our text file.
 //$array = file_get_contents('progressi.json');
