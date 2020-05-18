@@ -40,6 +40,15 @@ position: absolute;
     color: initial;
 }
 
+.visualizza-0-java .contenitore-gen .corso-link{
+  height: auto;
+  padding-top:8px;
+  border-bottom: 1px solid lightgray;
+}
+
+
+
+
 @media (max-width: 768px) {
     .btn-responsive {
       padding:2px 4px;

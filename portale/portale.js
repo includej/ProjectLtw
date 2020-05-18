@@ -58,20 +58,22 @@ function caricaVideo(arg){
 }
 
 function progressiCorsi(corso){
-    var user = "provadovrebbeandare";
-    $.get("../sessionControl/sessionControl.php", function(data, status, xhr){
+    var user = "francesco";
+    /*$.get("../sessionControl/sessionControl.php", function(data, status, xhr){
         user = data;
-    })
-
+    });*/
     $.getJSON("../server/progressi.json", function(json){
         console.log(user + " -- " + corso);
         $.each(json[user][corso],function(index, value){
             console.log(user + " -> " + value);
             var somma = 0;
             for( i = 0; i < value.length; ++i){
-                somma += value[i];                                       //Riempimento barra
+                somma += value[i];     
+                                                  //Riempimento barra
             };
             var barra = (100/value.length) * somma;
+           
+            
             //$("#"++"-"+x+"-barra").css("width",barra+"%");
             $("#"+ corso +"-"+index+"-barra").css("width",barra +"%");
             $("#"+ corso +"-"+index+"-barra").html(barra +"% completato");

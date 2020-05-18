@@ -1,22 +1,21 @@
 function terminale() {
   for(i = 1; i < 4; i++){
-    var printText = $('.text'+i).data('text');
-    var contentArray = printText.split('/n');
-    $.each(contentArray, function(index, newLine) {
+    var testo = $('.text'+i).data('text');
+    var righe = testo.split('/n');
+    $.each(righe, function(index, riga) {
       $('.text'+i).append('<span class="terminal" style="display:block;" id="'+ index+ i + '"></span>');
       i = i.toString();
-      var lineID = index+i;
+      var rigaID = index+i;
       var self = $(this);
         setTimeout(function () {
           //ogni riga
-          $.each(self, function(index, chunk){
+          $.each(self, function(index, carattere){
               setTimeout(function () {
                 //ogni char
-                $("#"+lineID).append("<span>"+chunk+"</span>");
+                $("#"+rigaID).append("<span>"+carattere+"</span>");
                 $('.classe-terminale').scrollTop($(document).height());
               }, index*30);
           });
-
         }, index*1200);
     });
   }
@@ -51,6 +50,59 @@ function checkA(){
   $("#btn-form").css("border-color", "green");
   return false;
 }
+
+
+function progressiEsercizi(corso,visualizza){
+
+  // Variabile di Testing (da cambiare in development)
+  var user = "francesco";
+  /*$.get("../../sessionControl/sessionConìtrol.php", function(data, status, xhr){
+      user = data;
+  });*/
+  
+  $.getJSON("../../server/progressi.json", function(json){
+    var value = json[user][corso];
+    value = value[visualizza];
+    var somma = 0;
+    for( i = 0; i < value.length; ++i){
+        somma += value[i]; 
+        if (value[i]){
+          $("#"+ corso +"-"+visualizza+"-" + i).css({"background-color": "green", "color": "white"});
+          $("#"+ corso +"-"+visualizza+"-" + i).append("<i class='fas fa-check'></i>");
+          //$("<i class='fas fa-check'></i>").insertAfter(".testo-"+json[user][corso]);
+          //Style extra => style='position: absolute; left : 75px; font-size: 30px
+        }
+    };
+    var barra = (100/value.length) * somma;
+    $("#"+ corso +"-"+visualizza+"-barra").css("width",barra +"%");
+    $("#"+ corso +"-"+visualizza+"-barra").html(barra +"% completato");
+  });
+};
+
+
+function aggiornaProgressi(corso,visualizza,i){
+      // Variabile di Testing (da cambiare in development)
+      var username = "francesco";
+      /*$.get("../../sessionControl/sessionConìtrol.php", function(data, status, xhr){
+      user = data;
+      });*/
+      
+      $.getJSON("../../server/progressi.json", function(json){
+        json[user][corso][visualizza][i] = 1;
+        console.log(json[user]+" : (1)");  
+        console.log(json[user][corso]+": (2)");
+        console.log(json[user][corso][visualizza][i]+" ciao");
+        console.log(json[user][corso][visualizza][i]+" ciao");
+      });
+
+      $.post("../../server/aggiornaJson.php", {
+        user : username,
+        corso : corso,
+        visualizza : visualizza,
+        i : i,
+      })
+}
+
 
 
 

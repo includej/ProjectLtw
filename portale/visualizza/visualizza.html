@@ -1,7 +1,7 @@
 <div class="visualizza-0-java">
 
     <!-- Bottone per tornare a pagina precedente -->
-    <button  class="btn btn-dark btn-responsive" onclick="caricaPagina('lezioni-java','corsi')" style="margin-bottom: 10px; border-radius: 100px; transition: 0.5s;"><i class="fas fa-long-arrow-alt-left"></i> Torna indietro </button>
+    <button  class="btn btn-dark btn-responsive" onclick="caricaPagina('lezioni-java','corsi');setTimeout(function(){progressiCorsi('java')},)" style="margin-bottom: 10px; border-radius: 100px; transition: 0.5s;"><i class="fas fa-long-arrow-alt-left"></i> Torna indietro </button>
     
     <!-- Contenitore principale-->
     <div class="contenitore-visualizza" style="height: auto;">
@@ -21,8 +21,8 @@
             </span>
             <!--div class="progress barra-progressi"-->
             <div class="progress divProg">
-                <div class="progress progress-bar progress-bar-success bg-success">
-                        50% Completato
+                <div class="progress progress-bar progress-bar-success bg-success" id= "java-corso0-barra">
+                    50% Completato
                 </div>
             </div>
         </div>
@@ -32,38 +32,43 @@
         </div>
 
         <div class="container-fluid contenitore-gen">
-            <div class="row" style="background-color:  whitesmoke; margin-bottom: 0; height: 70px;">
-                <a class="col-sm-12 colonna" href="#" style="height: auto; padding-top:10px; border-bottom: 1px solid lightgray;" onclick="caricaPagina('video-java-00','visualizza')"> 
+
+            <!-- Contenitori Lezioni + Esercizi -->
+            <div class="row" style="background-color:  whitesmoke; margin-bottom: 0; height: 70px;" id="java-corso0-0">
+                <a class="col-sm-12 corso-link" id="java-corso0-0" href="#" onclick="caricaPagina('video-java-00','visualizza');aggiornaProgressi('java','corso0',0)"> 
                     <img src="java.jpg" class="col-sm-1" style="max-width:8%; min-width: 100px; min-height: auto;">
                     Lezione 1
                 </a>
             </div>
-            <div class="row" style="background-color:  whitesmoke; margin-bottom: 0; height: 70px; ">
 
-            <a class="col-sm-12" href="#" style="height: auto; padding-top:10px; border-bottom: 1px solid lightgray;" onclick="setTimeout(caricaPagina('esercizio-java-00','esercizi','blank'),50);setTimeout(terminale,200)">
+            <div class="row" style="background-color:  whitesmoke; margin-bottom: 0; height: 70px; ">
+            <a class="col-sm-12 corso-link" id="java-corso0-1" href="#" onclick="caricaPagina('esercizio-java-00','esercizi','blank');setTimeout(function(){terminale()},200)">
                     <img src="java.jpg" class="col-sm-1" style="max-width:8%;min-width: 100px; height: auto;">
                     Esercizio 1 
                 </a>
             </div>
+
             <div class="row" style="background-color:  whitesmoke; margin-bottom: 0; height: 70px;">
-                <a class="col-sm-12" href="#" style="height: auto; padding-top:10px; border-bottom: 1px solid lightgray;">
+                <a class="col-sm-12 corso-link" id="java-corso0-2" href="#" >
                     <img src="java.jpg" class="col-sm-1" style="max-width:8%;min-width: 100px; height: auto;">
                     Lezione 2
                 </a>
             </div>
+
             <div class="row" style="background-color: whitesmoke; margin-bottom: 0; height: 70px;">
-                <a class="col-sm-12" href="#" style="height: auto; padding-top:10px;">
+                <a class="col-sm-12 corso-link" id="java-corso0-3" href="#" style="border-bottom: unset;">
                     <img src="java.jpg" class="col-sm-1" style="max-width:8%;min-width: 100px; height: auto;">
                     Esercizio 2
                 </a>
             </div>
+            
         </div>
     </div>
 </div>
 
 <!-- Videolezioni -->
 <div class="video-java-00">
-    <button  class="btn btn-dark btn-responsive" onclick="caricaPagina('visualizza-0-java','visualizza')" style="margin-bottom: 0px; border-radius: 100px; transition: 0.5s;"><i class="fas fa-long-arrow-alt-left"></i> Torna indietro </button>
+    <button  class="btn btn-dark btn-responsive" onclick="caricaPagina('visualizza-0-java','visualizza');setTimeout(function() {progressiEsercizi('java','corso0')},200);" style="margin-bottom: 0px; border-radius: 100px; transition: 0.5s;"><i class="fas fa-long-arrow-alt-left"></i> Torna indietro </button>
     <div class="embed-responsive embed-responsive-16by9">
         <iframe src="https://www.youtube.com/embed/BwbHW8MeHDU?autoplay=1" frameborder="0" style="margin-left: 10%; max-width: 80%; max-height:80%; border-radius: 25px;"></iframe>    
         <button class="btn btn-success btn-responsive" onclick="/*Insert to do*/" style="border-radius: 50px; margin-left:44%; max-width: 30%; max-height: 5%; box-sizing: border-box;">

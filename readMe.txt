@@ -8,10 +8,6 @@ Creati file :
 -config.php
 
 
--register login
--shop
--bottoni index
--pulizia codice (templatemoo)
--bottone esercizi
 
- register->portale->
+-shop
+-pulizia codice (templatemoo)
