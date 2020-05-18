@@ -37,8 +37,8 @@
         <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" />
         <link href="../fontawesome/css/all.min.css" rel="stylesheet" /> 
-        <link href="../css/templatemo-diagoona.css" rel="stylesheet" />
-        <script src="../js/templatemo-script.js"></script>
+        <link href="../css/projectcode.css" rel="stylesheet" />
+        <script src="../js/projectcode.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
         <script type="text/javascript" lang="javascript" src="login.js"></script>
         <title>Login</title>

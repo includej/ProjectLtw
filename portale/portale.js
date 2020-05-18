@@ -72,7 +72,9 @@ function progressiCorsi(corso){
                                                   //Riempimento barra
             };
             var barra = (100/value.length) * somma;
-           
+            if (somma == 0){
+                barra=0;
+            }
             
             //$("#"++"-"+x+"-barra").css("width",barra+"%");
             $("#"+ corso +"-"+index+"-barra").css("width",barra +"%");

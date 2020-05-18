@@ -10,4 +10,5 @@ Creati file :
 
 
 -shop
--pulizia codice (templatemoo)
+-fare completamenti python
+

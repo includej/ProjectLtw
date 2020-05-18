@@ -21,7 +21,7 @@ function terminale() {
   }
 }
 
-function checkA(){
+function checkA(index){
   var ArrayR = new Array($('#risposta1').data('text'),$('#risposta2').data('text'),$('#risposta3').data('text'));
   var esatte = 0;
   for(i = 1; i < 4 ; i++){
@@ -48,6 +48,7 @@ function checkA(){
     return false;
   }
   $("#btn-form").css("border-color", "green");
+  aggiornaProgressi('java','corso0',index);
   return false;
 }
 
@@ -59,7 +60,7 @@ function progressiEsercizi(corso,visualizza){
   /*$.get("../../sessionControl/sessionConìtrol.php", function(data, status, xhr){
       user = data;
   });*/
-  
+
   $.getJSON("../../server/progressi.json", function(json){
     var value = json[user][corso];
     value = value[visualizza];
@@ -74,35 +75,28 @@ function progressiEsercizi(corso,visualizza){
         }
     };
     var barra = (100/value.length) * somma;
+    if(somma == 0){
+      barra = 0;
+    }
     $("#"+ corso +"-"+visualizza+"-barra").css("width",barra +"%");
     $("#"+ corso +"-"+visualizza+"-barra").html(barra +"% completato");
-  });
+    });
 };
 
-
+//  Funzione che +1 ai progressi
 function aggiornaProgressi(corso,visualizza,i){
+
       // Variabile di Testing (da cambiare in development)
       var username = "francesco";
       /*$.get("../../sessionControl/sessionConìtrol.php", function(data, status, xhr){
       user = data;
       });*/
-      
-      $.getJSON("../../server/progressi.json", function(json){
-        json[user][corso][visualizza][i] = 1;
-        console.log(json[user]+" : (1)");  
-        console.log(json[user][corso]+": (2)");
-        console.log(json[user][corso][visualizza][i]+" ciao");
-        console.log(json[user][corso][visualizza][i]+" ciao");
-      });
 
-      $.post("../../server/aggiornaJson.php", {
-        user : username,
-        corso : corso,
-        visualizza : visualizza,
-        i : i,
-      })
-}
-
+      var xhttp = new XMLHttpRequest();
+      xhttp.open("POST", "../../server/aggiornaJson.php", true);
+      xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xhttp.send("user="+ username +"&corso=" + corso + "&visualizza="+ visualizza +"&i="+ i);   
+    }       
 
 
 
