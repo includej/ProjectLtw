@@ -11,4 +11,6 @@ Creati file :
 
 -shop
 -fare completamenti python
+-index
+-mettere casetta barra portale
 

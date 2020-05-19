@@ -1,11 +1,68 @@
- <!DOCTYPE html>
- <html lang="en">
- <head>
+<!DOCTYPE html>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
- </head>
- <body>
-     
- </body>
- </html>
+    <title>Shop</title>
+
+   
+    <link href="../../css/bootstrap.min.css">
+    <link href="shop.css" type="text/css">
+    <script src="shop.js" type="text/javascript"></script>
+    <script src="../../js/jquery-3.4.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+</head>
+<body class="body">
+    <div class="container" style="width: 100%">
+        <div class="top">
+            <h1>Pricing</h1>
+        </div>
+        <div class="toggle-btn">
+            <div style="margin: 10px">Year</div>
+            <label class="switch">
+                <input type="checkbox" id="meseanno" onclick="controllo()"/>
+            </label>
+            <div style="margin: 10px">Month</div>
+        </div>
+
+
+        <div class="livello-container">
+            <div class="livello">
+              <h1>Free</h1>
+              <h2 class="testo1">&euro;9.99</h2>
+              <h2 class="testo2">&euro;119.99</h2>
+              <ul class="list">
+                <li class="first">Java</li>
+                <li>Python</li>
+                <li></li>
+                <li></li>
+              </ul>
+              <a href="#" class="button bottone1">Start Here!</a>
+            </div>
+            <div class="livello">
+              <h1>Student</h1>
+              <h2 class="testo1">&euro;19.99</h2>
+              <h2 class="testo2">&euro;239.99</h2>
+              <ul class="list">
+                <li class="first">Java</li>
+                <li>Python</li>
+                <li>And Others</li>
+                <li>10 Courses</li>
+              </ul>
+              <a href="#" class="button bottone2">Start Here!</a>
+            </div>
+            <div class="livello">
+              <h1>Pro</h1>
+              <h2 class="testo1">&euro;29.99</h2>
+              <h2 class="testo2">&euro;359.99</h2>
+              <ul class="list">
+                <li class="first">Java</li>
+                <li>Python</li>
+                <li>And Other</li>
+                <li>20 Courses</li>
+              </ul>
+              <a href="#" class="button bottone3">Start Here!</a>
+            </div>
+          </div>
+        </div>    
+</body>
+</html>
