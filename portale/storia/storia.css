@@ -29,11 +29,28 @@
   padding-right: 40px;
 }
 
-.colsx .diapositivasx{
+/*.colsx .diapositivasx{
   margin-top: 1rem; 
-  background-color: rgb(255,0,0); 
-  border-radius: 20px 0 20px 5px; 
-  padding-bottom: 5px;
+  background-color: black; 
+  border-radius: 20px 0 20px 5px;
+  padding: 20px;
+} */
+
+.colsx .diapositivasx{
+  width: 100px;
+  height: 7%;
+  margin-top: 1rem; 
+  background-color: black; 
+  border-radius: 20px 0 20px 5px;
+  padding: 20px;
+  /*transition: width 2s, height 4s, display 10s;*/
+  visibility:hidden;
+  
+} 
+
+.blurred{
+  filter: blur(5px);
+  transition: filter 0.5s linear;
 }
 
 .colsx .diapositivasx .markdot{
@@ -41,12 +58,18 @@
   top: 15px;
   right:-18px;
   background-color: unset;
+  color: black;
 }
 
 .colsx .diapositivasx .markarr{
   position:absolute; 
   top:6px; 
   right:23px; 
-  color: rgb(255,0,0);
+  color: black;
   background-color: unset;
+}
+
+.transizione_sx{
+  width: auto;
+  height: auto;
 }

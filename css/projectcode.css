@@ -181,10 +181,6 @@ hr { border-top: 1px solid white; }
     color: #9CC;
 }
 
-/* Service */ 
-.pc-service-text { max-width: 365px; }
-.pc-service-img { margin-right: 25px; }
-.pc-service-img-r { margin-left: 25px; }
 
 /* Contact */
 .form-control,

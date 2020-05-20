@@ -1,24 +1,24 @@
 <div class="storia-java" style="padding-right:20px; padding-bottom: 50px;">
 
   <!-- Prima row SX-->
-  <div class="row storia-row" style="border-bottom:0; border-radius: 10px 10px 0 0;">
+  <div class="row storia-row" style="border-bottom:0; border-radius: 10px 10px 0 0; padding-top:50px;">
     
     <!-- container sinistra -->
     <div class="col-6 colsx">
       <div style="float: right; max-width: 500px;">
 
         <!-- sezione scritta-->
-        <div class="container diapositivasx">
-          <a class="fas fa-dot-circle fa-2x markdot" style="color: rgb(255,0,0);"></a>
+        <button class="fas fa-dot-circle fa-2x markdot" style="position: absolute; border: 0; right: -27px; top: 15px;" onclick="unblur('1')"></button>
+        <div class="container diapositivasx" id="contStoria1" >
+          
           <span class="fas fa-caret-right fa-3x markarr"></span>
 
           <!-- TITOLO -->
-          <h1>1991
+          <h1 id="titolo1">1991
           </h1>
 
           <!-- Parte scritta -->
-          <div>James Gosling della Sun Microsystems guida un team per lo sviluppo di un nuovo linguaggio di programmazione per il controllo di elettrodomestici. L'idea è di introdurre un unico, semplice linguaggio intermedio (chiamato byte-code) per il quale potessero facilmente essere scritti dei compilatori ad hoc.The Green Project Begins MS DOS is the dominant operating system Cell phones weigh half a pound
-            "Biosphere 2" project begins   
+          <div class="" id="testo1" style="overflow: hidden;">
           </div>
         </div>
       </div>
@@ -27,21 +27,21 @@
   </div>
 
   <!-- seconda row DX -->
-  <div class="row storia-row" style="border-top:0">
-    <div class="col-6 colsx"></div>
-    <div class="col-6" style="padding-left: 40px">
+  <div class="row storia-row" style="border-top:0; background-color: unset;">
+    <div class="col-6 colsx" style="background-color: rgba(255,255,255,0.8); z-index: 2"></div>
+    <div class="col-6" style="padding-left: 40px; background-color: rgba(255,255,255,0.8)">
       <div style="float: left; max-width: 500px;">
         <!-- sezione scritta -->
-        <div class="container" style="background-color: rgb(255,77,0); border-radius: 0 20px 5px 20px; padding-bottom: 5px;">
-          <span class="fas fa-dot-circle fa-2x" style="position:absolute; left:-18px; color: rgb(255,77,0)" ></span>
+        <button class="fas fa-dot-circle fa-2x" style="position:absolute; left:-27px; color: black; border:0; background:unset; z-index: 3" onclick="testingFun()"></button>
+        <div class="container" id="testArea" style="transition: left 2s ease-in-out, visibility 5s linear; background-color: rgb(255,77,0); border-radius: 0 20px 5px 20px; padding-bottom: 5px; position:relative; left: -600px; z-index: 1; visibility:hidden">
           <span class="fas fa-caret-left fa-3x" style="position:absolute; margin-top: -10.7px; left:23px; color: rgb(255,77,0);"></span>
 
           <!-- TITOLO -->
-          <h1>1994
+          <h1 class="" id="titolo2">1994
           </h1>
 
           <!-- Parte scritta -->
-          <div>The Green Project becomes FirstPerson Mosaic v1.0 is released "Cheers" ends an 11-year run
+          <div class="" id="testo2">The Green Project becomes FirstPerson Mosaic v1.0 is released "Cheers" ends an 11-year run
           </div>
         </div>
       </div>
@@ -57,15 +57,15 @@
 
         <!-- sezione scritta-->
         <div class="container diapositivasx">
-          <span class="fas fa-dot-circle fa-2x markdot" style="color: rgb(255,0,0);"></span>
+          <button class="fas fa-dot-circle fa-2x markdot" style="border: 0; right: -27px" onclick="unblur('3')"></button>
           <span class="fas fa-caret-right fa-3x markarr"></span>
 
           <!-- TITOLO -->
-          <h1>1995
+          <h1 class="blurred" id="titolo3">1995
           </h1>
 
           <!-- Parte scritta -->
-          <div>fu presentato alla fiera SunWorld che ne decretò il successo!   
+          <div class="blurred" id="testo3">fu presentato alla fiera SunWorld che ne decretò il successo!   
           </div>
         </div>
       </div>
@@ -121,7 +121,7 @@
   </div>
 
   <!-- sesta row DX -->
-  <div class="row storia-row" style="border-top:0; border-radius: 0 0 10px 10px;">
+  <div class="row storia-row" style="border-top:0; border-radius: 0 0 10px 10px; padding-bottom: 50px;">
     <div class="col-6 colsx"></div>
     <div class="col-6" style="padding-left: 40px">
       <div style="float: left; max-width: 500px;">
