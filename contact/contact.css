@@ -8,7 +8,7 @@ body {
     font-weight: 300;
     overflow-x: hidden;
     color: white;
-    background-image: url("../img/pwb.jpg");
+    background-image: url("../img/img4.jpg");
     background-color: #cccccc; /* Used if the image is unavailable */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
@@ -263,23 +263,28 @@ p{
 .container{
     display: grid;
     grid-template-columns: 300px 300px 300px;
-    grid-gap: 50px;
+    grid-gap: 50px;         /* differenza tra colonne */
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 750px;
     background-color: transparent;
     font-family: "Play", sans-serif;
+    
 }
 
 .persona{
     background-color: #000000;
     height: 37rem;
-    border-radius: 5px;
+  
     display: flex;
     flex-direction: column;
     align-items: center;
     box-shadow: rgba(255,255,255,0.7);
     color: white;
+    border: whitesmoke solid  1px;
+    border-radius: 20px ;
+    box-shadow: 2px 0px 5px rgba(255, 255,255, 1),  8px 5px 15px rgba(255, 255, 255, 1);   
+    
 }
 
 .nome{
@@ -293,19 +298,20 @@ p{
     border-radius: 50%;
     border: 5px solid #272133;
     margin-top: 20px;
-    box-shadow: 0 10px 50px rgba(235,25,110,1);
+    box-shadow: 0 10px 50px whitesmoke;
 }
 
 .bordi{
-    box-shadow: inset 0 0 0 4px #58cdd1;
-    color: #58afd1;
+    box-shadow: inset 0 0 0 4px whitesmoke;
+    color: whitesmoke;
     transition: color 0.25s 0.0833333333s;
     position: relative;
+    
 }
 
 .bordi::before,
 .bordi::after {
-  border: 0 solid transparent;
+  border: 0 solid lightblue ;
   box-sizing: border-box;
   content: '';
   pointer-events: none;
@@ -326,12 +332,12 @@ p{
    border-right-width: 4px;
 }
 .bordi:hover{
-    color: #ffe593;
+    color: lightblue;
 }
 
 .bordi:hover::before,
 .bordi:hover::after{
-    border-color: #eb196e;
+    border-color: lightblue;
     transition: border-color 0s, width 0.25s, height 0.25s;
     width: 100%;
     height: 100%;
@@ -350,7 +356,7 @@ p{
   
   .btn {
     background: none;
-    border: none;
+    border-color: lightblue;
     cursor: pointer;
     line-height: 1.5;
     font: 700 1.2rem 'Roboto Slab', sans-serif;
@@ -361,7 +367,7 @@ p{
   }
   
   .btn:focus {
-    outline: 2px dotted #55d7dc;
+    outline: 2px lightblue;
   }
   
   
@@ -379,10 +385,10 @@ p{
   }
   
   .social i {
-    color: #fff;
+    color: #000;
     position: absolute;
     top: 0.95em;
-    left: 0.96em;
+    left: 0.84em;
     transition: all 265ms ease-out;
   }
   
@@ -397,7 +403,7 @@ p{
     height: 45px;
     border-radius: 100%;
     display: block;
-    background: linear-gradient(45deg, #ff003c, #c648c8);
+    background: linear-gradient(45deg, lightblue, lightblue);
     transition: all 265ms ease-out;
   }
   
@@ -408,8 +414,7 @@ p{
   
   .social a:hover i {
     transform: scale(2.2);
-    color: #ff003c;
-    background: -webkit-linear-gradient(45deg, #ff003c, #c648c8);
+    color: lightblue;
     transition: all 265ms ease-in;
   }
   /*
@@ -420,4 +425,98 @@ p{
     font-size: 1.2em;
   }
   */
+
+
+
+
+/*  Area Messaggio  */
+  .register-box{
+      width:200%;
+      justify-content: center;
+  }
   
+  .register-box h2 {  /* login */
+    margin: 0 0 30px;  /* margine inferiore 30px */
+    padding: 0;    
+    color: #fff;
+    text-align: center;    
+  }
+  
+  .register-box .user-box {
+    position: relative;  /*posizionamento relativo al box */
+  }
+  
+ .user-box-area{
+     width: 250px;
+ }
+  
+  .register-box .user-box input,  .register-box .user-box textarea{  /*input box*/
+    width: 100%;       
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;  
+    outline: none;  /* serve per eliminare i bordi quando si fa focus */
+    background: transparent; 
+  }
+  
+ 
+
+  .register-box .user-box label { /*posizionamento utente e password */
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none; 
+    transition: 0.5s;
+  }
+    
+ 
+  .register-box .user-box input:focus ~ label,  /* la tilde seleziona il fratello */ /*input valid serve per far rimanere formattato il testo quando input non  vuoto */
+  .register-box .user-box input:valid ~ label{   /*sposta username e password quando si fa focus */
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+  }
+
+  .register-box .user-box textarea:focus ~ label,
+  .register-box .user-box textarea:valid ~ label {
+    top: -30px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 14px;
+  }
+
+
+  
+  .register-box .submit-btn input{ 
+    position: relative;
+    display: inline-block;    
+    padding: 10px 20px;
+    background-color: transparent;
+    font-style: rgb(255,0,0);
+    font-size: 14px;
+    margin-top: 25px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    overflow: hidden;
+    border-radius: 5px;
+    border-color: #12b7c0;
+    border-width: 1.5px;
+    color: #fff;
+  }
+  
+  .register-box .submit-btn input:hover{
+    background: #03e9f4;
+    color: rgba(0,0,0);
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 100px #03e9f4;
+  }

@@ -12,8 +12,7 @@
 }
 
 .storia-java .storia-row{
-  height: auto;
-  background-color: rgba(255,255,255,0.8); 
+  height: auto; 
   height: auto;
   margin-bottom:0;
 }
@@ -27,49 +26,67 @@
   float: right; 
   border-right: 3px solid black; 
   padding-right: 40px;
+  transition: border-right 2s ease-in-out;
 }
-
-/*.colsx .diapositivasx{
-  margin-top: 1rem; 
-  background-color: black; 
-  border-radius: 20px 0 20px 5px;
-  padding: 20px;
-} */
 
 .colsx .diapositivasx{
-  width: 100px;
-  height: 7%;
-  margin-top: 1rem; 
+  max-width: 500px; 
   background-color: black; 
   border-radius: 20px 0 20px 5px;
-  padding: 20px;
-  /*transition: width 2s, height 4s, display 10s;*/
-  visibility:hidden;
-  
-} 
-
-.blurred{
-  filter: blur(5px);
-  transition: filter 0.5s linear;
+  padding: 15px;
+  text-align: end;
 }
 
-.colsx .diapositivasx .markdot{
+.markdotsx{
   position:absolute; 
-  top: 15px;
-  right:-18px;
+  top: 0px;
+  right:-27px;
   background-color: unset;
   color: black;
+  border: 0;
+  z-index: 2;
 }
 
 .colsx .diapositivasx .markarr{
   position:absolute; 
-  top:6px; 
+  top:-10.7px; 
   right:23px; 
   color: black;
   background-color: unset;
 }
 
-.transizione_sx{
-  width: auto;
-  height: auto;
+.coldx{
+  padding-left:40px;
+}
+
+.container-diapositiva-sx{
+  float: right; 
+  max-width: 500px;
+}
+
+.container-diapositiva-dx{
+  float: left; 
+  max-width: 500px;
+}
+
+.markdot-dx{
+  position:absolute; 
+  left:-27px; 
+  color: black; 
+  border:0; 
+  background:unset; 
+  z-index: 3
+}
+
+.diapositiva-dx{
+  background-color: black; 
+  border-radius: 0 20px 5px 20px; 
+  padding: 15px;
+}
+
+.coldx .diapositiva-dx .markarr-dx{
+  position:absolute; 
+  top: -10.7px; 
+  left:23px; 
+  color: black;
 }

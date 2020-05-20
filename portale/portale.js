@@ -86,22 +86,7 @@ function progressiCorsi(corso){
 
 
 
-function unblur(i){
-    /*$("#titolo"+i).css("filter", "unset");
-    $("#testo"+i).css("filter", "unset");*/
-    
-    /*$/(".diapositivasx").toggleClass("transizione_sx");
-    $(".diapositivasx").removeClass("diapositivasx");*/
-    $("#contStoria"+i).css("visibility"," visible");
-    $("#contStoria"+i).css("width","350px");
-    setTimeout(function(){    /*$("#contStoria"+i).css("transition","all linear 10s");*/
-        $("#testo1").text('James Gosling della Sun Microsystems guida un team per lo sviluppo di un nuovo linguaggio di programmazione per il controllo di elettrodomestici. L idea è di introdurre un unico, semplice linguaggio intermedio (chiamato byte-code) per il quale potessero facilmente essere scritti dei compilatori ad hoc.The Green Project Begins MS DOS is the dominant operating system Cell phones weigh half a pound ' );
-},0);
-
-}
-
-
-function testingFun(){
-    $("#testArea").css("left","0");
-    $("#testArea").css("visibility","unset");
+function mostraStoria(i){
+    $("#testo"+i).show(1000*2);
+    $("#bordo-"+i).css("border-right","3px solid green");
 }
