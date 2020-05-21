@@ -23,13 +23,27 @@ function cambiaId(nome){
 };
 
 function cambiaDisplay(nome){
-    console.log("1");
-    $("#dejan").fadeOut(500);
-    $("#marco").fadeOut(500);
-    $("#christian").fadeOut(500);
+    fadeOutAll();
     setTimeout(function(){
-        $("#"+nome).fadeIn("slow");
-        $("#divMess").fadeToggle("slow");
+        $("#"+nome).fadeIn(300);
+        $("#divMess").fadeIn(300);
         cambiaId(nome);
-    }, 550);
+    }, 350);
+}
+
+function diplayOriginale(){
+    fadeOutAll();
+
+    setTimeout(function(){
+        $("#dejan").fadeIn(300);
+        $("#marco").fadeIn(300);
+        $("#christian").fadeIn(300);
+    }, 350);
+}
+
+function fadeOutAll(){    
+    $("#dejan").fadeOut(300);
+    $("#marco").fadeOut(300);
+    $("#christian").fadeOut(300);
+    $("#divMess").fadeOut(300);
 }

@@ -15,3 +15,8 @@ Creati file :
 -index
 -mettere icona casetta barra portale
 
+- finire template
+- sistemare bottoni "indietro"
+- inserire casetta (portale -> index)
+- Sistemare layout portale
+- Dashboard per ogni corso

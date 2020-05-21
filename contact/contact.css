@@ -448,6 +448,8 @@ p{
   
  .user-box-area{
      width: 250px;
+     padding-left:5px;
+     padding-right:5px;
  }
   
   .register-box .user-box input,  .register-box .user-box textarea{  /*input box*/
