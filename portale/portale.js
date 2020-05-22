@@ -14,6 +14,20 @@ $(document).ready(function(){
         direzioneFreccia($("#freccia-python"));
     });
 
+    // Dropdown Ruby + movimento freccia
+    $("#btn-ruby").click(function (e) {
+        e.preventDefault();
+        $("#contenitore").toggleClass("li-ruby-on");
+        direzioneFreccia($("#freccia-ruby"));
+    });
+
+    // Dropdown Scala + movimento freccia
+    $("#btn-scala").click(function (e) {
+        e.preventDefault();
+        $("#contenitore").toggleClass("li-scala-on");
+        direzioneFreccia($("#freccia-scala"));
+    });
+
     // FUNZIONE direzioneFreccia
     function direzioneFreccia(freccia){;
         if ($(freccia).attr("class") == "fas fa-caret-down"){
@@ -29,6 +43,7 @@ $(document).ready(function(){
 
 //  FUNZIONA CaricaPagina
 function caricaPagina(id,tipo,cambio){
+    //  Carica la Pagina
     $("#dynam").empty();
     $("#dynam").load( tipo + "/" + tipo + ".html ." + id);
 
@@ -89,4 +104,14 @@ function progressiCorsi(corso){
 function mostraStoria(i){
     $("#testo"+i).show(1000*2);
     $("#bordo-"+i).css("border-right","3px solid green");
+}
+
+function caricaSfondo(nome_sfondo,colore){
+    if (colore){
+        $(".contenitore-fluid").css("background-image" , "unset");
+        $(".contenitore-fluid").css("background-color" , nome_sfondo);
+    }
+    else{
+        $(".contenitore-fluid").css("background-image" , "url('../img/" + nome_sfondo +".png')");
+    }
 }

@@ -7,7 +7,7 @@
         $nome = pg_escape_string($db,$_POST['nome']);
         $cognome = pg_escape_string($db,$_POST['cognome']);
         $email = pg_escape_string($db,$_POST['inEmail']);
-        $pass = pg_escape_string($db,$_POST['password']);
+        $pass = md5(pg_escape_string($db,$_POST['password']));
 
         //  richiesta al database DB
         $query = "SELECT * FROM utente WHERE email = '{$email}' AND username = '{$user}' AND password = '{$pass}'";
@@ -44,7 +44,27 @@
                     "corso4" => [0, 0, 0, 0],
                     "corso5" => [0, 0, 0, 0],
                     "corso6" => [0, 0, 0, 0]
-                    ]
+                ],
+                    "ruby" =>
+                [
+                    "corso0" => [0, 0, 0, 0],
+                    "corso1" => [0, 0, 0, 0],
+                    "corso2" => [0, 0, 0, 0],
+                    "corso3" => [0, 0, 0, 0],
+                    "corso4" => [0, 0, 0, 0],
+                    "corso5" => [0, 0, 0, 0],
+                    "corso6" => [0, 0, 0, 0]
+                ],
+                    "scala" =>
+                [
+                    "corso0" => [0, 0, 0, 0],
+                    "corso1" => [0, 0, 0, 0],
+                    "corso2" => [0, 0, 0, 0],
+                    "corso3" => [0, 0, 0, 0],
+                    "corso4" => [0, 0, 0, 0],
+                    "corso5" => [0, 0, 0, 0],
+                    "corso6" => [0, 0, 0, 0]
+                ],
                 ]
                 ];
                 //The end result.

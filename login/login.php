@@ -5,7 +5,7 @@
       // username and password sent from form 
       include("../config.php");
       $myusername = pg_escape_string($db,$_POST['username']);
-      $mypassword = pg_escape_string($db,$_POST['password']);
+      $mypassword = md5(pg_escape_string($db,$_POST['password']));
 
       $sql = "SELECT * FROM utente WHERE username = '{$myusername}' AND password = '{$mypassword}'";
       $result = pg_query($db,$sql) OR die("alert('aiuto');");

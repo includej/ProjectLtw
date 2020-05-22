@@ -21,6 +21,8 @@
  
     <script src="portale.js"></script>
     <script src="corsi/corsi.js"></script>
+    <script src="visualizza/visualizza.js"></script>
+
    
 
     <!-- style per navbar#Parte Destra-->
@@ -52,7 +54,7 @@
               <li class="nav-item active">
 
                 <!-- Logo -->
-                <a class="nav-link" href="/portale/portale.html" ><i class="fas fa-code"></i>  ProjectCode<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/index.html" ><i class="fas fa-code"></i>  ProjectCode<span class="sr-only">(current)</span></a>
               </li>
             </ul>
           </div>
@@ -76,10 +78,9 @@
           </div>
           <div id="contenitore-drop">
             <ul class="li-java-off" id="lista-java">
-            <li><a href="#"  name="pulsante-corsi" id="lezioni-java" onclick="caricaCorsi('java');setTimeout(function(){progressiCorsi('java')},200);">Lezioni</a></li>
+              <li><a href="#"  name="pulsante-corsi" id="lezioni-java" onclick="caricaCorsi('java');setTimeout(function(){progressiCorsi('java')},200);">Lezioni</a></li>
               <li><a href="#" id="storia-java" onclick="caricaPagina('storia-java','storia','java')">Storia</a></li>
               <li><a href="#" onclick="caricaPagina('documentazione-java','documentazione','java')">Documentazione</a></li>
-              <li><a href="#">Novità</a></li>
             </ul>
           </div>
 
@@ -89,11 +90,36 @@
           </div>
           <div id="contenitore-drop">
             <ul class="li-python-off" id="lista-python">
-              <li><a href="#" name="pulsante-corsi" id="lezioni-python">Storia</a></li>
-              <li><a href="#">Documentazione</a></li>
-              <li><a href="#">Novità</a></li>
+              <li><a href="#"  name="pulsante-corsi" id="lezioni-python" onclick="caricaCorsi('python');setTimeout(function(){progressiCorsi('python')},200);">Lezioni</a></li>
+              <li><a href="#" id="storia-ruby" onclick="caricaPagina('storia-python','storia','python')">Storia</a></li>
+              <li><a href="#" onclick="caricaPagina('documentazione-python','documentazione','python')">Documentazione</a></li>
               </ul>
           </div>
+          <!-- dropdown ruby -->
+          <div class="btn-barra">
+            <li></i><a href="#" id="btn-ruby"><i class="far fa-gem fa-xs"></i><span >RUBY</span> <em class="logo-freccia"><i id="freccia-ruby" class="fas fa-caret-down"></i></em></li>
+            </div>
+            <div id="contenitore-drop">
+              <ul class="li-ruby-off" id="lista-ruby">
+                <li><a href="#"  name="pulsante-corsi" id="lezioni-ruby" onclick="caricaCorsi('ruby');setTimeout(function(){progressiCorsi('ruby')},200);">Lezioni</a></li>
+                <li><a href="#" id="storia-ruby" onclick="caricaPagina('storia-ruby','storia','ruby')">Storia</a></li>
+                <li><a href="#" onclick="caricaPagina('documentazione-ruby','documentazione','ruby')">Documentazione</a></li>
+                </ul>
+            </div>
+             <!-- dropdown scala -->
+            <div class="btn-barra">
+              <li></i><a href="#" id="btn-scala"><i class="fab fa-stripe-s fa-sm"></i><span >Scala</span> <em class="logo-freccia"><i id="freccia-scala" class="fas fa-caret-down"></i></em></li>
+            </div>
+            <div id="contenitore-drop">
+            <ul class="li-scala-off" id="lista-scala">
+          <li><a href="#"  name="pulsante-corsi" id="lezioni-scala" onclick="caricaCorsi('scala');setTimeout(function(){progressiCorsi('scala')},200);">Lezioni</a></li>
+          <li><a href="#" id="storia-scala" onclick="caricaPagina('storia-scala','storia','scala')">Storia</a></li>
+          <li><a href="#" onclick="caricaPagina('documentazione-scala','documentazione','scala')">Documentazione</a></li>
+          </ul>
+          </div>
+
+
+
         </ul>
       </div>
 

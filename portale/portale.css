@@ -124,3 +124,25 @@ html {
 #contenitore.li-python-on #lista-python{ 
     display: inline-block;
 }
+
+/*elementi dropdown ruby*/
+
+.li-ruby-off { 
+    display: none;
+}
+
+#contenitore.li-ruby-on #lista-ruby{ 
+    display: inline-block;
+}
+
+/*elementi dropdown scala*/
+
+.li-scala-off { 
+    display: none;
+}
+
+#contenitore.li-scala-on #lista-scala{ 
+    display: inline-block;
+}
+
+

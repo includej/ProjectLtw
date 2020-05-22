@@ -29,8 +29,11 @@
     border-radius: 20px;
     opacity: 0.9;
 }
-.lezioni-java div a:hover{
-   
+.lezioni-java div a:hover{   
+    color: green;
+}
+
+.lezioni-python div a:hover{   
     color: green;
 }
 

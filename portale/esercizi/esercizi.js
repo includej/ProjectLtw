@@ -85,7 +85,6 @@ function progressiEsercizi(corso,visualizza){
 
 //  Funzione che +1 ai progressi
 function aggiornaProgressi(corso,visualizza,i){
-
       // Variabile di Testing (da cambiare in development)
       var username = "francesco";
       /*$.get("../../sessionControl/sessionConìtrol.php", function(data, status, xhr){
@@ -96,7 +95,4 @@ function aggiornaProgressi(corso,visualizza,i){
       xhttp.open("POST", "../../server/aggiornaJson.php", true);
       xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
       xhttp.send("user="+ username +"&corso=" + corso + "&visualizza="+ visualizza +"&i="+ i);   
-    }       
-
-
-
+    }

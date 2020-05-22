@@ -40,7 +40,13 @@ position: absolute;
     color: initial;
 }
 
-.visualizza-0-java .contenitore-gen .corso-link{
+.visualizza-java .contenitore-gen .corso-link{
+  height: auto;
+  padding-top:8px;
+  border-bottom: 1px solid lightgray;
+}
+
+.visualizza-python .contenitore-gen .corso-link{
   height: auto;
   padding-top:8px;
   border-bottom: 1px solid lightgray;
