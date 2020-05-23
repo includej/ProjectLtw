@@ -403,7 +403,7 @@ p{
     height: 45px;
     border-radius: 100%;
     display: block;
-    background: linear-gradient(45deg, lightblue, lightblue);
+    background: linear-gradient(45deg, whitesmoke, whitesmoke);
     transition: all 265ms ease-out;
   }
   
@@ -414,7 +414,7 @@ p{
   
   .social a:hover i {
     transform: scale(2.2);
-    color: lightblue;
+    color: whitesmoke;
     transition: all 265ms ease-in;
   }
   /*

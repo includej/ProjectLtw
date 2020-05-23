@@ -22,7 +22,7 @@
         $array = json_decode($array, true);
         define("_PROGRESSI", $array[$myusername]);
         $_SESSION['username'] = $myusername;
-        header("Location: ../index.html");
+        header("Location: ../portale/portale.html");
       } else {      //  Da implementare meglio con AJAX
         $error = "Your Login Name or Password is invalid";
         echo "alert('aiuto2');";

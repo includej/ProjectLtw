@@ -6,7 +6,6 @@ body {
   margin:0;  /*margine */
   padding:0;  /*spazio intorno ad un elemento */
   font-family: 'Open Sans', Arial, sans-serif; /* font body */
-  background-image: url("../img/diagoona-bg-2.jpg");/*colore sfondo body */
   background-color: #cccccc; /* Used if the image is unavailable */
   height: 500px; /* You must set a specified height */
   background-position: center; /* Center the image */

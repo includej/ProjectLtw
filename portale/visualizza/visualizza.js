@@ -1,6 +1,5 @@
 function caricaLezione(corso, i, icorso){
     $("#dynam").empty();
-
     $("#dynam").append(`
       
         <button  class="btn btn-dark btn-responsive" onclick="caricaVisualizza('` + corso + `', '` + icorso + `');" style="margin-bottom: 20px; border-radius: 100px; transition: 0.5s;"><i class="fas fa-long-arrow-alt-left"></i> Torna indietro </button>
@@ -20,7 +19,6 @@ function caricaEsercizi(corso, icorso, iesercizio){
     <!-- bottone per tornare indietro -->
     <button  class="btn btn-dark btn-responsive" onclick="caricaVisualizza('` + corso + `', '` + icorso + `');caricaSfondo('`+corso+`',false)" style="margin-bottom: 0px; border-radius: 100px; transition: 0.5s;"><i class="fas fa-long-arrow-alt-left"></i> Torna indietro </button>
     <form method="POST">
-
         <!-- container esercizi -->
         <div class="container-fluid" style="margin-top: 30px">
 
@@ -169,6 +167,8 @@ function caricaVideo(corso, i){
     var lezioni = { java:["et64T6ueCbA","tlBEfMeLQZk","62MFe8IuK_4","JzsejdWEWbk","uiV6rVGXJ1E","m7Ms3oA59Rs","VZPnXg9LQ50","60WqrrFwOlY","8Mgd1FyVOHY","npQcwCtXC7M","p48_Mg9YPPc","XNgPmXkRi30","88JQYFAikdE","y3juvABKUYw"],
                     python:["7HS_XYUYsm0","t81EsDXrB3Q","PzkEjTFTsdo","XJKYXe_SaTI","6dpBOSksDnI","dHtCmgatZV0","IvnI9yBrPW4","k7m5bqHg0Ws","HwED2r-amZE","LuzmpdZsyWk","MC7pejaVf8E","Ew6_sOYgw","pUn5m6N3D4s","Ewd7wp5UU1A"],
                     ruby:["iG67T_TV9N0","cpUjQ13ILtU","_RBF-o6ouI0","WEfA79Xw06k","5Zdf2C87oVA","spHaZ3bdI7U","4LpARTmsKVs","wWZGxLYQLA4","CTXh81kiQZQ","Ne6O2viFT1w","zStM4SJ94Q0","pr3gG6NO2cg","f7aheb_P9V0","StT4jmTb-7E"],
-                    scala:["LQVDJtfpQU0","GD4qyXACuTc","haMI6uoMKs0","uYcSYCGITeU","OKiwZFMgnEk","6xRsw_6fc18","wvsxOedxQRo","u0FLmrnAm5k","_tLEX80p5-k","JYDhVgKfauk","LzL9EPrwGZA","flfARstLqmc","GuGRsmuczWU","Tadg1OVTH5E"]};
+                    scala:["LQVDJtfpQU0","GD4qyXACuTc","haMI6uoMKs0","uYcSYCGITeU","OKiwZFMgnEk","6xRsw_6fc18","wvsxOedxQRo","u0FLmrnAm5k","_tLEX80p5-k","JYDhVgKfauk","LzL9EPrwGZA","flfARstLqmc","GuGRsmuczWU","Tadg1OVTH5E"],
+                    bash:["FjwVt9L8xjs","avlepnr5XWQ","vM4U5Ul7W80","aipK0fWS8pQ","wNOw1L2ZfRs","u9jjD1c8ATM","4W7EFxkkzFg","HZwhnRDPRLE","Mb5gLVu7_Gk","y4SNya41awE","ZRKH4KwRZH8","5MsSfXVWtOA","gS0L8TzlQdM","WyOWSfuLPmY"],
+                    javascript:["qoSksQ4s_hg","VB7y0yxZjro","VB7y0yxZjro","czlwRUeTCgw","czlwRUeTCgw","QLatPwsbDrQ","u0Mq3FzpsmI","_MC0Gw07w8M","Z1eV0RBRam0","tH-q9QFNUdA","B4ZCFdrBmbE","Lp-Du2fKoug","1v1Bk3Q02Sc","LjGaaWX_NbE"]};
     return "https://www.youtube.com/embed/"+lezioni[corso][i]+"?autoplay=1";
 }

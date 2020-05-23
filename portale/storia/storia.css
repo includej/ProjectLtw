@@ -11,7 +11,7 @@
     left: -30px;
 }
 
-.storia-java .storia-row{
+.storia .storia-row{
   height: auto; 
   height: auto;
   margin-bottom:0;
@@ -40,9 +40,9 @@
 .markdotsx{
   position:absolute; 
   top: 0px;
-  right:-27px;
+  right:-1.55rem;
   background-color: unset;
-  color: black;
+  color: white;
   border: 0;
   z-index: 2;
 }
@@ -71,8 +71,8 @@
 
 .markdot-dx{
   position:absolute; 
-  left:-27px; 
-  color: black; 
+  left:-1.55rem; 
+  color: white; 
   border:0; 
   background:unset; 
   z-index: 3

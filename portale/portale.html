@@ -22,6 +22,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.common.dev.js"></script>
  
     <script src="portale.js"></script>
+    <script src="storia/storia.js"></script>
     <script src="corsi/corsi.js"></script>
     <script src="visualizza/visualizza.js"></script>
 
@@ -49,8 +50,10 @@
       <div id="container-fluid">
 
         <!-- Navbar -->
-        <nav class="navbar navbar-expand navbar-dark bg-dark" id="nav" >
+        <nav class="navbar navbar-expand navbar-dark bg-dark" id="nav" class="d-flex justify-content-center">
           <a class="navbar-brand" href="#"></a>
+
+
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
@@ -59,7 +62,25 @@
                 <a class="nav-link" href="/index.html" ><i class="fas fa-code"></i>  ProjectCode<span class="sr-only">(current)</span></a>
               </li>
             </ul>
+
+            <ul class="navbar-nav mr-auto" style="margin-left: 10%;">
+              <li class="nav-item">
+
+                <!-- bottoni -->
+                <a  style="color:white" class="fas fa-home fa-lg" href="../index.html"></a>
+              </li>
+              <li class="nav-item">
+                <!-- bottoni -->
+                <a style="color:white" class="fas fa-shopping-cart fa-lg" href="../negozio/negozio.html"></a>
+              </li>
+              <li class="nav-item">
+                <!-- bottoni -->
+                <a class="fas fa-question fa-lg" style="color: white;" href="../contact/contact.html"></a>
+              </li>
+            </ul>
+
           </div>
+
 
           <!-- parte dinamica navbar#Parte Destra-->
           <div class="nav-item" style="display: flex" id="dynamicZone">
@@ -73,7 +94,11 @@
       <!-- Barra laterale -->
       <div id="contenitore-barra">
         <ul class="barra-lat">
-
+          <!-- dropdown home-->
+          <div class="btn-barra">                 
+            <li></i><a href="#" id="btn-home" onclick="dashboard();"><i class="fas fa-door-open fa-xs" ></i><span>HOME</span></a></i></li>
+          </div>
+   
           <!-- dropdown java-->
           <div class="btn-barra">                 
             <li></i><a href="#" id="btn-java"><i class="fab fa-java fa-sm" ></i><span>JAVA</span> <em class="logo-freccia"><i id="freccia-java" class="fas fa-caret-down"></i></em></li>
@@ -81,7 +106,7 @@
           <div id="contenitore-drop">
             <ul class="li-java-off" id="lista-java">
               <li><a href="#"  name="pulsante-corsi" id="lezioni-java" onclick="caricaCorsi('java');setTimeout(function(){progressiCorsi('java')},200);">Lezioni</a></li>
-              <li><a href="#" id="storia-java" onclick="caricaPagina('storia-java','storia','java')">Storia</a></li>
+              <li><a href="#" id="storia-java" onclick="creaStoria('java')">Storia</a></li>
               <li><a href="#" onclick="caricaPagina('documentazione-java','documentazione','java')">Documentazione</a></li>
             </ul>
           </div>
@@ -93,7 +118,7 @@
           <div id="contenitore-drop">
             <ul class="li-python-off" id="lista-python">
               <li><a href="#"  name="pulsante-corsi" id="lezioni-python" onclick="caricaCorsi('python');setTimeout(function(){progressiCorsi('python')},200);">Lezioni</a></li>
-              <li><a href="#" id="storia-ruby" onclick="caricaPagina('storia-python','storia','python')">Storia</a></li>
+              <li><a href="#" id="storia-ruby" onclick="creaStoria('python')">Storia</a></li>
               <li><a href="#" onclick="caricaPagina('documentazione-python','documentazione','python')">Documentazione</a></li>
               </ul>
           </div>
@@ -104,20 +129,42 @@
             <div id="contenitore-drop">
               <ul class="li-ruby-off" id="lista-ruby">
                 <li><a href="#"  name="pulsante-corsi" id="lezioni-ruby" onclick="caricaCorsi('ruby');setTimeout(function(){progressiCorsi('ruby')},200);">Lezioni</a></li>
-                <li><a href="#" id="storia-ruby" onclick="caricaPagina('storia-ruby','storia','ruby')">Storia</a></li>
+                <li><a href="#" id="storia-ruby" onclick="creaStoria('ruby')">Storia</a></li>
                 <li><a href="#" onclick="caricaPagina('documentazione-ruby','documentazione','ruby')">Documentazione</a></li>
                 </ul>
             </div>
              <!-- dropdown scala -->
             <div class="btn-barra">
-              <li></i><a href="#" id="btn-scala"><i class="fab fa-stripe-s fa-sm"></i><span >Scala</span> <em class="logo-freccia"><i id="freccia-scala" class="fas fa-caret-down"></i></em></li>
+              <li></i><a href="#" id="btn-scala"><i class="fab fa-stripe-s fa-sm"></i><span >SCALA</span> <em class="logo-freccia"><i id="freccia-scala" class="fas fa-caret-down"></i></em></li>
             </div>
             <div id="contenitore-drop">
             <ul class="li-scala-off" id="lista-scala">
           <li><a href="#"  name="pulsante-corsi" id="lezioni-scala" onclick="caricaCorsi('scala');setTimeout(function(){progressiCorsi('scala')},200);">Lezioni</a></li>
-          <li><a href="#" id="storia-scala" onclick="caricaPagina('storia-scala','storia','scala')">Storia</a></li>
+          <li><a href="#" id="storia-scala" onclick="creaStoria('scala')">Storia</a></li>
           <li><a href="#" onclick="caricaPagina('documentazione-scala','documentazione','scala')">Documentazione</a></li>
           </ul>
+          </div>
+          <!-- dropdown bash-->
+          <div nome="barra-bash" class="btn-barra">                 
+            <li></i><a href="#" id="btn-bash"><i class="fas fa-dollar-sign fa-sm" ></i><span>BASH</span> <em class="logo-freccia"><i id="freccia-bash" class="fas fa-caret-down"></i></em></li>
+          </div>
+          <div nome="barra-bash" id="contenitore-drop">
+            <ul class="li-bash-off" id="lista-bash">
+              <li><a href="#"  name="pulsante-corsi" id="lezioni-bash" onclick="caricaCorsi('bash');setTimeout(function(){progressiCorsi('bash')},200);">Lezioni</a></li>
+              <li><a href="#" id="storia-bash" onclick="creaStoria('bash')">Storia</a></li>
+              <li><a href="#" onclick="caricaPagina('documentazione-bash','documentazione','bash')">Documentazione</a></li>
+            </ul>
+          </div>
+          <!-- dropdown javascript-->
+          <div nome="barra-javascript" class="btn-barra">                 
+            <li></i><a href="#" id="btn-javascript"><i class="fab fa-js-square fa-sm" ></i><span>JS</span> <em class="logo-freccia"><i id="freccia-java" class="fas fa-caret-down"></i></em></li>
+          </div>
+          <div nome="barra-javascript" id="contenitore-drop">
+            <ul class="li-javascript-off" id="lista-javascript">
+              <li><a href="#"  name="pulsante-corsi" id="lezioni-javascript" onclick="caricaCorsi('javascript');setTimeout(function(){progressiCorsi('javascript')},200);">Lezioni</a></li>
+              <li><a href="#" id="storia-java" onclick="creaStoria('javascript')">Storia</a></li>
+              <li><a href="#" onclick="caricaPagina('documentazione-javascript','documentazione','javascript')">Documentazione</a></li>
+            </ul>
           </div>
 
 

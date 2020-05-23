@@ -1,3 +1,7 @@
+if(!isLogged()){
+    window.location = "../login/login.php";
+};
+
 $(document).ready(function(){
 
     // Dropdown Java + movimento freccia
@@ -27,6 +31,22 @@ $(document).ready(function(){
         $("#contenitore").toggleClass("li-scala-on");
         direzioneFreccia($("#freccia-scala"));
     });
+
+    // Dropdown Bash + movimento freccia
+    $("#btn-bash").click(function (e) {
+        e.preventDefault();
+        $("#contenitore").toggleClass("li-bash-on");
+        direzioneFreccia($("#freccia-bash"));
+    });
+
+    // Dropdown Javascript + movimento freccia
+    $("#btn-javascript").click(function (e) {
+        e.preventDefault();
+        $("#contenitore").toggleClass("li-javascript-on");
+        direzioneFreccia($("#freccia-javascript"));
+    });
+
+
 
     // FUNZIONE direzioneFreccia
     function direzioneFreccia(freccia){;
@@ -61,7 +81,7 @@ function caricaPagina(id,tipo,cambio){
 
                 // Caso: entrato in un corso
                 $(".contenitore-fluid").css("background-image" , "url('../img/" + cambio +".png')");
-                $(".contenitore-fluid").css("background-position" , "left 80px top");
+                $(".contenitore-fluid").css("background-position" , "left 100px top");
             }
         }
     }
@@ -116,3 +136,38 @@ function caricaSfondo(nome_sfondo,colore){
         $(".contenitore-fluid").css("background-image" , "url('../img/" + nome_sfondo +".png')");
     }
 }
+
+
+function scorciatoia(corso){
+    var nome_corso = corso.toLowerCase();
+    var user = "francesco";
+    /*$.get("../sessionControl/sessionControl.php", function(data, status, xhr){
+        user = data;
+    });*/
+    var flag = false;
+    $.getJSON("../server/progressi.json", function(json){
+        $.each(json[user][nome_corso],function(index, value){
+            /*index = corso 0, i = 0, nome_corso = java */
+            if (flag){
+                return false;
+            }
+            for( i = 0; i < value.length; ++i){
+                /*alert(index+" "+i+" "+nome_corso);*/
+                if( (value[i]) == 0 ){
+                    flag = true;
+                    if ((i%2)== 0){
+                        aggiornaProgressi(nome_corso,index,i);
+                        index= index.substring((index.length)-1);
+                        caricaLezione(nome_corso,(i/2),index);       
+                    }
+                    else{
+                        index= index.substring((index.length)-1);
+                        caricaEsercizi(nome_corso, index, i);
+                    }
+                    break;
+                } 
+            
+            };
+        }); 
+    });
+}  

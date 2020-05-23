@@ -150,6 +150,26 @@ html {
     display: inline-block;
 }
 
+/*elementi dropdown bash*/
+
+.li-bash-off { 
+    display: none;
+}
+
+#contenitore.li-bash-on #lista-bash{ 
+    display: inline-block;
+}
+
+/*elementi dropdown javascript*/
+
+.li-javascript-off { 
+    display: none;
+}
+
+#contenitore.li-javascript-on #lista-javascript{ 
+    display: inline-block;
+}
+
 /* CSS vue */
 .linguaggi-img{
     display: grid;

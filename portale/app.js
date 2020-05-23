@@ -1,22 +1,29 @@
+//import {caricaCorsi} from 'corsi/corsi.js';
+
 Vue.component('linguaggi',{
   
-    props: ['immagine', 'titolo'],
-    
+    props: ['immagine', 'titolo', 'descrizione'],
     template: `
-    
-  <figure class="linguaggi">
-    <img :src="immagine" :alt="titolo" width="380" height="180"/>
-    <figcaption>
-      <h2 v-if="titolo=='Java'||titolo=='Ruby'" style="color:black; font-size: 18px;">{{titolo}}</h2>
-      <h2 v-if="titolo=='Python'||titolo=='Scala'" style="color:black; font-size: 18px; float:right;">{{titolo}}</h2>
-    </figcaption>
-  </figure>
-  `
-  });
+    <figure class="linguaggi" style="cursor: pointer;" v-on:click="carica">
+      <img :src="immagine" :alt="titolo" width="380" height="180"/>
+      <figcaption>
+        <h2 v-if="titolo=='Java'||titolo=='Ruby'||titolo=='Bash'" style="color:black; font-size: 18px;">{{titolo}}</h2>
+        <h2 v-if="titolo=='Python'||titolo=='Scala'||titolo=='Javascript'" style="color:black; font-size: 18px; float:right;">{{titolo}}</h2>
+      </figcaption>
+    </figure>
+    `,
+  methods:{               //    Metodo definito per ogni immagine
+    carica: function(){
+      scorciatoia(this.titolo);
+    },
+  },
+});
 
 
-  
-new Vue({
+
+function dashboard(){
+  document.getElementById("dynam").innerHTML="<div id='app'> </div>";
+  new Vue({
     el: '#app',
     template: `
   <div class="linguaggi-img">
@@ -29,7 +36,7 @@ new Vue({
           {
             immagine: '../img/java.jpg',
             titolo: "Java",
-            descrizione: "",
+            descrizione: "descrizione",
      
           },
           {
@@ -46,8 +53,21 @@ new Vue({
             immagine: '../img/scala.jpg',
             titolo: "Scala",
             descrizione: "",
+          },
+          {
+            immagine: '../img/bash.jpg',
+            titolo: "Bash",
+            descrizione: "",
+          },
+          {
+            immagine: '../img/javascript.jpg',
+            titolo: "Javascript",
+            descrizione: "",
           }
         ]
       }
     },
 });
+}
+
+dashboard();
