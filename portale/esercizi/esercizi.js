@@ -56,10 +56,10 @@ function checkA(corso, iCorso, iEsercizio){
 function progressiEsercizi(corso,visualizza){
 
   // Variabile di Testing (da cambiare in development)
-  var user = "francesco";
-  /*$.get("../../sessionControl/sessionConìtrol.php", function(data, status, xhr){
+  /*var user = "francesco";*/
+  $.get("../../sessionControl/sessionControl.php", function(data, status, xhr){
       user = data;
-  });*/
+  });
 
   $.getJSON("../../server/progressi.json", function(json){
     var value = json[user][corso];
@@ -87,10 +87,10 @@ function progressiEsercizi(corso,visualizza){
 function aggiornaProgressi(corso,visualizza,i){
       
       // Variabile di Testing (da cambiare in development)
-      var username = "francesco";
-      /*$.get("../../sessionControl/sessionConìtrol.php", function(data, status, xhr){
-      user = data;
-      });*/
+      /*var username = "francesco";*/
+      $.get("../../sessionControl/sessionControl.php", function(data, status, xhr){
+        username = data;
+      });
 
       var xhttp = new XMLHttpRequest();
       xhttp.open("POST", "../../server/aggiornaJson.php", true);
@@ -98,4 +98,4 @@ function aggiornaProgressi(corso,visualizza,i){
       xhttp.send("user="+ username +"&corso=" + corso + "&visualizza="+ visualizza +"&i="+ i); 
     }
 
-    
+                                                

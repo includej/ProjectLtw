@@ -27,8 +27,18 @@ $(document).ready(function(){
 });
 
 function isLogged(){
-    $.post("sessionControl.php", function(data){
-        if(data)
-            return data;
-    });
+    var httpRequest = new XMLHttpRequest();
+    httpRequest.onreadystatechange = gestisciResponse;
+    httpRequest.open("POST","/sessionControl/sessionControl.php", false);
+    httpRequest.send();
+
+    function gestisciResponse(e) {
+        if (e.target.readyState == XMLHttpRequest.DONE && e.target.status == 200) {
+            if (e.target.responseText){
+
+            } else {
+                window.location="/login/login.php";
+            }
+        }
+    }
 }

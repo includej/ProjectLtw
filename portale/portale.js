@@ -1,4 +1,4 @@
-if(!isLogged()){
+if(isLogged() == false){
     window.location = "../login/login.php";
 };
 
@@ -81,7 +81,7 @@ function caricaPagina(id,tipo,cambio){
 
                 // Caso: entrato in un corso
                 $(".contenitore-fluid").css("background-image" , "url('../img/" + cambio +".png')");
-                $(".contenitore-fluid").css("background-position" , "left 100px top");
+                $(".contenitore-fluid").css({"background-position" : "left 200px top"});
             }
         }
     }
@@ -94,10 +94,10 @@ function caricaVideo(arg){
 }
 
 function progressiCorsi(corso){
-    var user = "francesco";
-    /*$.get("../sessionControl/sessionControl.php", function(data, status, xhr){
+    /*var user = "francesco";*/
+    $.get("../sessionControl/sessionControl.php", function(data, status, xhr){
         user = data;
-    });*/
+    });
     $.getJSON("../server/progressi.json", function(json){
         console.log(user + " -- " + corso);
         $.each(json[user][corso],function(index, value){
@@ -140,10 +140,10 @@ function caricaSfondo(nome_sfondo,colore){
 
 function scorciatoia(corso){
     var nome_corso = corso.toLowerCase();
-    var user = "francesco";
-    /*$.get("../sessionControl/sessionControl.php", function(data, status, xhr){
+    /*var user = "francesco";*/
+    $.get("../sessionControl/sessionControl.php", function(data, status, xhr){
         user = data;
-    });*/
+    });
     var flag = false;
     $.getJSON("../server/progressi.json", function(json){
         $.each(json[user][nome_corso],function(index, value){
