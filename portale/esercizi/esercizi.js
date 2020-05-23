@@ -98,4 +98,4 @@ function aggiornaProgressi(corso,visualizza,i){
       xhttp.send("user="+ username +"&corso=" + corso + "&visualizza="+ visualizza +"&i="+ i); 
     }
 
-                                                
+                                                    

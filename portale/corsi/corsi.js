@@ -77,7 +77,7 @@ function caricaVisualizza(corso,i){
         </div>
 
         <div style="margin-left: 30px;">
-            Start learning programming! Learn how to say "porta" too
+            Inizia a programmare qui!
         </div>
 
         <div class="container-fluid contenitore-gen" id="contenitore-visualizza">`);

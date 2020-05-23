@@ -9,7 +9,7 @@ function inviaMess(){
     Email.send(
         "projectcoding@libero.it",      //E-MAIL DI SEND
         "projectcoding@libero.it",      //E-MAIL DI RICEZIONE
-        soggetto + " " + mail + " " + nome + " " + cognome,
+        "Inviato a: " + soggetto + ", Inviato da: " + mail + " " + nome + " " + cognome,
         messaggio,             //   Campo Messaggio da inviare
         "smtp.libero.it",
         "projectcoding@libero.it",
