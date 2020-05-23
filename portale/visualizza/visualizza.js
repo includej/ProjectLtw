@@ -12,7 +12,7 @@ function caricaLezione(corso, i, icorso){
             </button>`);        
 }
 
-function caricaEsercizi(corso, icorso){
+function caricaEsercizi(corso, icorso, iesercizio){
     $("#dynam").empty();
     caricaSfondo('black',true);
    
@@ -155,7 +155,7 @@ function caricaEsercizi(corso, icorso){
             <div class="row" style="margin: 0; height: auto;">
                 <div class="col-md-5 col-sm-1"></div>
                 <div class="col-md-2 col-sm-10">
-                    <button onclick="return checkA(1)"  class="btn btn-dark btn-responsive" id="btn-form" style="min-width: 80%; margin-bottom: 0px; border-radius: 100px; transition: 0.5s;" value="INVIA">Check</button>
+                    <button onclick="return checkA('` + corso + `','corso` + icorso + `',` + iesercizio + `)"  class="btn btn-dark btn-responsive" id="btn-form" style="min-width: 80%; margin-bottom: 0px; border-radius: 100px; transition: 0.5s;" value="INVIA">Check</button>
                 </div>
                 <div class="col-md-5 col-sm-1"></div>
             </div>
