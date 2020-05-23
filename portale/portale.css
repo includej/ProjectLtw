@@ -3,8 +3,13 @@
 body{
     height: 100%;
     overflow-y: hidden;
-    background-color: lightgray;
+    background-image: url("../img/sfondo.jpg");
+    background-color: #cccccc; /* Used if the image is unavailable */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
     resize: none;
+  
 }
 
 html { 
@@ -145,4 +150,27 @@ html {
     display: inline-block;
 }
 
-
+/* CSS vue */
+.linguaggi-img{
+    display: grid;
+    grid-template-columns: 414px 414px;
+    grid-gap: 20px;
+    margin: 2rem auto;
+    max-width: 90vmin;
+  }
+  
+  .linguaggi{
+    display: block;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 5px 5px rgba(0,0,0,.2);
+    margin: 0;
+    background: #FFF;
+    opacity: 0.95;
+  }
+    
+ .linguaggi img{ border-radius: .5rem; display: block; }
+ .linguaggi figcaption { margin: 1rem 1rem 0; }
+ .linguaggi h2 { font-size: 1.6rem; line-height: 1; }
+ .linguaggi em { font-size: 1rem; }
+  

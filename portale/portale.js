@@ -61,6 +61,7 @@ function caricaPagina(id,tipo,cambio){
 
                 // Caso: entrato in un corso
                 $(".contenitore-fluid").css("background-image" , "url('../img/" + cambio +".png')");
+                $(".contenitore-fluid").css("background-position" , "left 80px top");
             }
         }
     }
