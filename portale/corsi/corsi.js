@@ -96,7 +96,7 @@ function caricaVisualizza(corso,i){
             </div>
 
             <div class="row" style="background-color:  whitesmoke; margin-bottom: 0; height: 70px; ">
-                <a class="col-sm-12 corso-link" id="`+ corso + `-corso`+i+`-`+i2+`" href="#" onclick="caricaEsercizi('`+corso+ `',` +i+ `);">
+                <a class="col-sm-12 corso-link" id="`+ corso + `-corso`+i+`-`+i2+`" href="#" onclick="caricaEsercizi('`+corso+ `',` +i+ `, ` +i2+ `);">
                     <img src="../img/`+ corso + `.jpg" class="col-sm-1" style="max-width:8%;min-width: 100px; height: auto;">
                     Esercizio `+ ind +`
                 </a>

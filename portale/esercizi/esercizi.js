@@ -21,7 +21,7 @@ function terminale() {
   }
 }
 
-function checkA(index){
+function checkA(corso, iCorso, iEsercizio){
   var ArrayR = new Array($('#risposta1').data('text'),$('#risposta2').data('text'),$('#risposta3').data('text'));
   var esatte = 0;
   for(i = 1; i < 4 ; i++){
@@ -48,7 +48,7 @@ function checkA(index){
     return false;
   }
   $("#btn-form").css("border-color", "green");
-  aggiornaProgressi('java','corso0',index);
+  aggiornaProgressi(corso,iCorso, iEsercizio);
   return false;
 }
 
@@ -94,5 +94,5 @@ function aggiornaProgressi(corso,visualizza,i){
       var xhttp = new XMLHttpRequest();
       xhttp.open("POST", "../../server/aggiornaJson.php", true);
       xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      xhttp.send("user="+ username +"&corso=" + corso + "&visualizza="+ visualizza +"&i="+ i);   
+      xhttp.send("user="+ username +"&corso=" + corso + "&visualizza="+ visualizza +"&i="+ i); 
     }
