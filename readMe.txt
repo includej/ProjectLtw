@@ -11,6 +11,7 @@ Creati file :
 
 -index
 
-- Sistemare layout portale
+- home, shop, messaggio 
+- Link 
 - Dashboard per ogni corso
 - Sistemare storia per altri corsi
