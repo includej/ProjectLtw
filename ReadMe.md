@@ -32,8 +32,6 @@ Le tecnologie utilizzate nella web application sono:
 
 - POSTGRESQL (DATABASE RELAZIONALE)
 
-
-
 Lista pagine che compongono il sito e relativa spiegazione.
 
 ### Index:
@@ -46,15 +44,11 @@ Index.html elementi:
 
 - Footer: Informazioni su autori.
 
-
-
 Projectcode.css:
 
 - Definizione stile navbar,sfondo,footer ed elementi pagina.
 
 - Definizione stili per rendere la pagina responsive.
-
-
 
 Projectcode.js:
 
@@ -94,7 +88,7 @@ const setSfondoOverlay = () => {                           //funzione per il res
 }
 
 $(document).ready(function () {
-    const autoplaySfondo = true;	// AutoPlay per sfondo
+    const autoplaySfondo = true;    // AutoPlay per sfondo
     initSfondo(autoplaySfondo);    // inizializzo lo sfondo
     setSfondoOverlay();                 //
 
@@ -152,13 +146,13 @@ $(document).ready(function(){
         }
     }
 
- 
+
     function isLogged(){     //funzione per reindirizza l'utente in caso provi ad accedere al portale senza essersi loggato
         var httpRequest = new XMLHttpRequest();
         httpRequest.onreadystatechange = gestisciResponse;
         httpRequest.open("POST","/sessionControl/sessionControl.php", false);
         httpRequest.send();
-    
+
         function gestisciResponse(e) {
             if (e.target.readyState == XMLHttpRequest.DONE && e.target.status == 200) {
                 // Caso: se utente già loggato, non fa nulla
@@ -189,8 +183,6 @@ Register.html:
 
 - Bottone per mostrare la password
 
-
-
 Register.css:
 
 - Definizione stile navbar ed elementi pagina.
@@ -198,8 +190,6 @@ Register.css:
 - Definizione stile blocco registrazione
 
 - Animazioni scritte (focus, valide
-  
-  
 
 Register.js:
 
@@ -263,10 +253,6 @@ Register.php:
 
 - se la registrazione va a buon fine, vengono inizializzati i progressi dell'utente.
 
-
-
-
-
 # Login:
 
 Login.php:
@@ -277,7 +263,7 @@ Login.php:
   
   parte HTML:
 
--  Navbar
+- Navbar
 
 - Form per la registrazione
 
@@ -290,10 +276,6 @@ Login.css:
 - Definizione stile blocco login
 
 - Animazioni scritte (focus, valide)
-
-
-
-
 
 # Portale:
 
@@ -315,13 +297,49 @@ Portale.css
 
 Portale.js:
 
-- Funzione che controlla se lutente è loggato con eventuale reindirizzamento alla pagina di login
+- Funzione che controlla se l'utente è loggato con eventuale reindirizzamento alla pagina di login
 
 - Funzioni dropdown (lista+ animazione freccia)
 
 - Funzione che carica lo sfondo in base al linguaggio selezionato
 
 - Funzione che reindirizza all'ultima lezione/esercizo non svolto
+  
+  ```javascript
+  function scorciatoia(corso){
+      var nome_corso = corso.toLowerCase();
+      /*var user = "francesco";*/
+      $.get("../sessionControl/sessionControl.php", function(data, status, xhr){
+          user = data;
+      });
+      var flag = false;
+      $.getJSON("../server/progressi.json", function(json){
+          $.each(json[user][nome_corso],function(index, value){
+              /*index = corso 0, i = 0, nome_corso = java */
+              if (flag){
+                  return false;
+              }
+              for( i = 0; i < value.length; ++i){
+                  /*alert(index+" "+i+" "+nome_corso);*/
+                  if( (value[i]) == 0 ){
+                      flag = true;
+                      if ((i%2)== 0){
+                          aggiornaProgressi(nome_corso,index,i);
+                          index= index.substring((index.length)-1);
+                          caricaLezione(nome_corso,(i/2),index);       
+                      }
+                      else{
+                          index= index.substring((index.length)-1);
+                          caricaEsercizi(nome_corso, index, i);
+                      }
+                      break;
+                  } 
+  
+              };
+          }); 
+      });
+  }  
+  ```
 
 - Funzione che mostra la storia
 
@@ -335,13 +353,49 @@ App.js:
 
 - Funzione dashboard crea l'oggetto Vue.js, che associa ad ogni singolo riquadro creato un linguaggio
 
-
-
 # Lista corsi:
 
 Corsi.js:
 
 - Funzione che carica i corsi del linguaggio selezionato ne setta lo sfondo e carica i progressi dei corsi
+  
+  ```javascript
+  function caricaCorsi(corso){
+      $("#dynam").empty();
+      caricaSfondo(corso,false);    
+      for(i=0;i<7;i++){
+  
+          var nome_corso= "Corso "+i;
+          if (i== 0){
+              nome_corso= "Introduzione";
+          }
+          $("#dynam").append(        
+              `<div>
+                  <a href="#" class="link-corso" onclick="caricaVisualizza('`+ corso + `','` + i + `');">
+                      <div id="contenitore-foto" class="container-fluid">
+                          <img src="../img/`+ corso + `.jpg" class="img-fluid" style="max-width: 80%; height: auto;">
+                          <div class="divIntro">
+                              <h1 id="testo_+ `+ corso + `">` + nome_corso + `</h1>
+                          </div>
+                          <div class="divAttiv">
+                              <h6 id="testo_+ `+ corso + `">4 Activities</h6>
+                          </div>
+                          <span class="fa-stack fa-2x divNumb">
+                              <i class="fa fa-circle-notch fa-stack-2x"></i>
+                              <strong class="fa-stack-1x">` + i + `</strong>
+                          </span>
+                          <div class="progress divProg">
+                              <div class="progress progress-bar progress-bar-success bg-success" id="`+corso+`-corso`+i+`-barra" style="width:50%; ">
+                                      50% Completato
+                              </div>
+                          </div>
+                      </div>
+                  </a>
+              </div>`);
+      }
+      progressiCorsi(corso);
+  }
+  ```
 
 - Funzione che carica la lista delle lezioni e degli esercizi del corso selezionato e carica i progressi delle lezioni e degli esercizi svolti
 
@@ -350,8 +404,6 @@ Corsi.css:
 - Definizione stili corsi
 
 - Definizione stili barra progressi
-
-
 
 # Lista lezioni/esercizi:
 
@@ -369,23 +421,90 @@ Visualizza.css:
 
 - Definizione stili lezioni
 
-
-
 # Esercizi:
 
 Esercizi.js:
 
 - Funzione che carica il terminale e relativa animazione
+  
+  ```javascript
+  function terminale() {
+    for(i = 1; i < 4; i++){ //3 esercizi
+      var testo = $('.text'+i).data('text');
+      var righe = testo.split('/n');    //viene splittato il data
+      $.each(righe, function(index, riga) { //ciclo per ogni riga
+        $('.text'+i).append('<span class="terminal" style="display:block;" id="'+ index+ i + '"></span>');
+        i = i.toString();
+        var rigaID = index+i;
+        var self = $(this);
+          setTimeout(function () {
+            //ogni riga
+            $.each(self, function(index, carattere){
+                setTimeout(function () { 
+                  //ogni char
+                  $("#"+rigaID).append("<span>"+carattere+"</span>");
+                  //$('.classe-terminale').scrollTop($(document).height());
+                }, index*30);
+            });
+          }, index*1200);
+      });
+    }
+  }
+  ```
 
 - Funzione che controlla le risposte date agli esercizi
+  
+  ```javascript
+  function checkA(corso, iCorso, iEsercizio){
+    var ArrayR = new Array($('#risposta1').data('text'),$('#risposta2').data('text'),$('#risposta3').data('text'));
+    var esatte = 0;
+    for(i = 1; i < 4 ; i++){
+      if (ArrayR[i-1] == $("#risposta"+i.toString()).val().replace(/"/g, "'")){    
+        esatte++;
+        $("#risposta"+i.toString()).attr('disabled','disabled');
+        $("#risposta"+i.toString()).css("border-color", "green");
+  
+        $("#variabile"+i.toString()).removeClass("alert-danger");
+        $("#variabile"+i.toString()).addClass("alert alert-success");
+        $("#variabile"+i.toString()).html("Risposta Corretta!");
+      } else {
+        if($("#risposta"+i.toString()).val())
+          $("#variabile"+i.toString()).html("Risposta Sbagliata!");
+        else
+          $("#variabile"+i.toString()).html("Inserire Risposta!");
+        $("#variabile"+i.toString()).addClass("alert alert-danger");
+  
+        $("#risposta"+i.toString()).css("border-color", "red");
+      }
+    }
+    if ( esatte < 3){
+      $("#btn-form").css("border-color", "red");
+      return false;
+    }
+    $("#btn-form").css("border-color", "green");
+    aggiornaProgressi(corso,iCorso, iEsercizio);
+    return false;
+  }
+  ```
 
-- Funzione che aggiorna i progressi dell' utente.
+- Funzione che aggiorna i progressi dell' utente attraverso una barra progressi. (AJAX)
+  
+  ```javascript
+  function aggiornaProgressi(corso,visualizza,i){
+        $.get("../../sessionControl/sessionControl.php", function(data, status, xhr){
+          username = data;
+        });
+  
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("POST", "../../server/aggiornaJson.php", true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("user="+ username +"&corso=" + corso + "&visualizza="+ visualizza +"&i="+ i); 
+  }
+  ```
 
 Esercizi.css:
 
 - Definizione stili esercizi
-
-
 
 # Storia:
 
@@ -397,15 +516,11 @@ Storia.css:
 
 - Definizione stili timeline e storia
 
-
-
 # Documentazione:
 
 Documentazione.html:
 
 - Documentazione per ogni linguaggio 
-
-
 
 # Contatti:
 
@@ -428,7 +543,31 @@ Contact.css:
 Contact.js:
 
 - Funzione che invia mail contenete messaggio utente
+  
+  ```javascript
+  function inviaMess(){
+      var soggetto = $(".btn-mess").attr("id");
+  
+      var mail = document.messForm.mail.value;
+      var messaggio = document.messForm.messaggio.value;
+      var nome = document.messForm.nome.value;
+      var cognome = document.messForm.cognome.value;
+  ```
 
+      Email.send(
+          "projectcoding@libero.it",      //E-MAIL DI SEND
+          "projectcoding@libero.it",      //E-MAIL DI RICEZIONE
+          "Inviato a: " + soggetto + ", Inviato da: " + mail + " " + nome + " " + cognome,
+          messaggio,             //   Campo Messaggio da inviare
+          "smtp.libero.it",
+          "projectcoding@libero.it",
+          "Porto2020@"
+        );     
+        alert("Email inviata con successo");
+
+  }
+
+```
 - Funzione che seleziona autore del sito da contattare 
 
 - Funzione che visualizza la form per inviare il messaggio
@@ -436,8 +575,6 @@ Contact.js:
 - Funzione che ripristina le schede autori
 
 - Funzione che fa sparire tutte le schede degli autori e la form
-
-
 
 # Negozio:
 
@@ -462,3 +599,17 @@ Negozio.css:
 Negozio.js:
 
 - Funzione selezione piano mensile/annuale
+
+  ```javascript
+  function controllo() {
+      if ($(".testo1").css("display") == "block" ){
+        $(".testo1").css("display","none");
+        $(".testo2").css("display","inline");
+        $("#meseanno").text("Mese");
+      } else {
+        $(".testo2").css("display","none");
+        $(".testo1").css("display","inline");
+        $("#meseanno").text("Anno");
+      }
+    }
+```

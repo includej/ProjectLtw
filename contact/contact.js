@@ -5,6 +5,7 @@ function inviaMess(){
     var messaggio = document.messForm.messaggio.value;
     var nome = document.messForm.nome.value;
     var cognome = document.messForm.cognome.value;
+   
     
     Email.send(
         "projectcoding@libero.it",      //E-MAIL DI SEND
@@ -15,6 +16,7 @@ function inviaMess(){
         "projectcoding@libero.it",
         "Porto2020@"
       );     
+      alert("Email inviata con successo");
 }
 
 

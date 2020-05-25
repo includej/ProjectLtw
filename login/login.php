@@ -36,6 +36,7 @@
         <link href="../css/projectcode.css" rel="stylesheet" />
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
         <script type="text/javascript" lang="javascript" src="login.js"></script>
+        <script src="sessionControl/sessionControl.js"></script>
         <!--
         <script src="../js/projectcode.js"></script> -->
         <title>Login</title>
@@ -75,7 +76,7 @@
                                           <a class="nav-link pc-nav-link" href="/portale/portale.html">Portale</a>
                                       </li>  
                                       <li class="nav-item active">
-                                          <a class="nav-link pc-nav-link" href="negozio.html">Shop <span class="sr-only">(current)</span></a>
+                                          <a class="nav-link pc-nav-link" href="negozio.html">Shop</a>
                                       </li>
                                       <li class="nav-item">
                                           <a class="nav-link pc-nav-link" href="/contact/contact.html">Contatti</a>

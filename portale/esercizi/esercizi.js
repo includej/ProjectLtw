@@ -1,8 +1,8 @@
 function terminale() {
-  for(i = 1; i < 4; i++){
+  for(i = 1; i < 4; i++){ //3 esercizi
     var testo = $('.text'+i).data('text');
-    var righe = testo.split('/n');
-    $.each(righe, function(index, riga) {
+    var righe = testo.split('/n');    //viene splittato il data
+    $.each(righe, function(index, riga) { //ciclo per ogni riga
       $('.text'+i).append('<span class="terminal" style="display:block;" id="'+ index+ i + '"></span>');
       i = i.toString();
       var rigaID = index+i;
@@ -10,10 +10,10 @@ function terminale() {
         setTimeout(function () {
           //ogni riga
           $.each(self, function(index, carattere){
-              setTimeout(function () {
+              setTimeout(function () { 
                 //ogni char
                 $("#"+rigaID).append("<span>"+carattere+"</span>");
-                $('.classe-terminale').scrollTop($(document).height());
+                //$('.classe-terminale').scrollTop($(document).height());
               }, index*30);
           });
         }, index*1200);
@@ -85,9 +85,6 @@ function progressi(corso,visualizza){
 
 //  Funzione che +1 ai progressi
 function aggiornaProgressi(corso,visualizza,i){
-      
-      // Variabile di Testing (da cambiare in development)
-      /*var username = "francesco";*/
       $.get("../../sessionControl/sessionControl.php", function(data, status, xhr){
         username = data;
       });
