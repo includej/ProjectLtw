@@ -552,23 +552,21 @@ Contact.js:
       var messaggio = document.messForm.messaggio.value;
       var nome = document.messForm.nome.value;
       var cognome = document.messForm.cognome.value;
+  
+      Email.send(
+      "projectcoding@libero.it",      //E-MAIL DI SEND
+      "projectcoding@libero.it",      //E-MAIL DI RICEZIONE
+      "Inviato a: " + soggetto + ", Inviato da: " + mail + " " + nome + " " + cognome,
+      messaggio,             //   Campo Messaggio da inviare
+      "smtp.libero.it",
+      "projectcoding@libero.it",
+      "Porto2020@"
+    );     
+    alert("Email inviata con successo");
+  }
   ```
 
-      Email.send(
-          "projectcoding@libero.it",      //E-MAIL DI SEND
-          "projectcoding@libero.it",      //E-MAIL DI RICEZIONE
-          "Inviato a: " + soggetto + ", Inviato da: " + mail + " " + nome + " " + cognome,
-          messaggio,             //   Campo Messaggio da inviare
-          "smtp.libero.it",
-          "projectcoding@libero.it",
-          "Porto2020@"
-        );     
-        alert("Email inviata con successo");
-
-  }
-
-```
-- Funzione che seleziona autore del sito da contattare 
+- Funzione che seleziona autore del sito da contattare
 
 - Funzione che visualizza la form per inviare il messaggio
 
@@ -599,11 +597,11 @@ Negozio.css:
 Negozio.js:
 
 - Funzione selezione piano mensile/annuale
-
+  
   ```javascript
   function controllo() {
       if ($(".testo1").css("display") == "block" ){
-        $(".testo1").css("display","none");
+        $(".testo1").css("display","non);
         $(".testo2").css("display","inline");
         $("#meseanno").text("Mese");
       } else {
@@ -612,4 +610,4 @@ Negozio.js:
         $("#meseanno").text("Anno");
       }
     }
-```
+  ```
