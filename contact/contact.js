@@ -1,11 +1,11 @@
 function inviaMess(){
     var soggetto = $(".btn-mess").attr("id");
-    alert("ciao");
+ 
     var mail = document.messForm.mail.value;
     var messaggio = document.messForm.messaggio.value;
     var nome = document.messForm.nome.value;
     var cognome = document.messForm.cognome.value;
-    alert(soggetto + " " + mail + " " + nome + " " + cognome);
+    
     Email.send(
         "projectcoding@libero.it",      //E-MAIL DI SEND
         "projectcoding@libero.it",      //E-MAIL DI RICEZIONE
