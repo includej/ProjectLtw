@@ -1,5 +1,3 @@
-//import {caricaCorsi} from 'corsi/corsi.js';
-
 Vue.component('linguaggi',{
   
     props: ['immagine', 'titolo', 'descrizione'],

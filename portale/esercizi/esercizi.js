@@ -53,7 +53,7 @@ function checkA(corso, iCorso, iEsercizio){
 }
 
 
-function progressiEsercizi(corso,visualizza){
+function progressi(corso,visualizza){
 
   // Variabile di Testing (da cambiare in development)
   /*var user = "francesco";*/
@@ -96,6 +96,4 @@ function aggiornaProgressi(corso,visualizza,i){
       xhttp.open("POST", "../../server/aggiornaJson.php", true);
       xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
       xhttp.send("user="+ username +"&corso=" + corso + "&visualizza="+ visualizza +"&i="+ i); 
-    }
-
-                                                    
+}

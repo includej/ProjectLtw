@@ -1,13 +1,3 @@
-function unblur(i){
-    alert("enter");
-    $("#titolo"+i).addClass("show");
-    $("#testo"+i).addClass("show");
-    $("#cont-storia"+i).css("width","350px");
-    $("#cont-storia"+i).css("height","100%");
-    
-}
-
-
 function creaStoria(corso){
     var anno = {"java": ["1992","1993","1995","2006","2007"],
                 "python": ["1989", "1991" , "2000", "2008"],
@@ -50,7 +40,7 @@ function creaStoria(corso){
                 <div class="container-diapositiva-sx">
 
                   <!-- sezione scritta-->
-                  <button class="fas fa-dot-circle fa-2x markdotsx"  onclick="mostraStoria('`+i+`')"></button>
+                  <button class="fas fa-square fa-2x markdotsx"  onclick="mostraStoria('`+i+`')"></button>
                   <div class="container diapositivasx">
 
                     <span class="fas fa-caret-right fa-3x markarr"></span>
@@ -74,7 +64,7 @@ function creaStoria(corso){
               <div class="col-6 coldx">
                 <div class="container-diapositiva-dx">
                   <!-- sezione scritta -->
-                  <button class="fas fa-dot-circle fa-2x markdot-dx" onclick="mostraStoria('`+i+`')"></button>
+                  <button class="fas fa-square fa-2x markdot-dx" onclick="mostraStoria('`+i+`')"></button>
                   <div class="container diapositiva-dx">
                     <span class="fas fa-caret-left fa-3x markarr-dx"></span>
                     

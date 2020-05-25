@@ -40,9 +40,9 @@
 .markdotsx{
   position:absolute; 
   top: 0px;
-  right:-1.55rem;
+  right:-1.40rem;
   background-color: unset;
-  color: white;
+  color: linear-gradient(black, white);
   border: 0;
   z-index: 2;
 }
@@ -71,8 +71,8 @@
 
 .markdot-dx{
   position:absolute; 
-  left:-1.55rem; 
-  color: white; 
+  left:-1.40rem; 
+  color: linear-gradient(black, white);
   border:0; 
   background:unset; 
   z-index: 3

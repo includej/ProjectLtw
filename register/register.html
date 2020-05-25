@@ -7,14 +7,74 @@
         <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>                <!-- librerire per toogle -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>         
         <link href="../css/projectcode.css" rel="stylesheet" />
         <script src="../js/projectcode.js"></script>          <!-- js per la registrazione -->
+        <link href="../fontawesome/css/all.min.css" rel="stylesheet" />
         <title>Iscriviti</title>
     </head>
 
     <body>
+
+
+        <!-- Navbar -->
+        <div class="pc-container" >  <!-- <===== Colore di prova, importato per vedere la distinzione body e navbar-->    
+            <!-- Navbar -->
+            <div>
+                <div class="pc-row pt-3">
+                    <div class="pc-col-left">
+                        <div class="pc-site-header media">
+                            <i class="fas fa-code fa-3x mt-1 pc-logo"></i>
+                            <div class="media-body">
+                                <h1 class="pc-sitename">ProjectCode</h1>
+                                <p class="pc-slogon">Learn Faster Learn Better</p>
+                            </div>        
+                        </div>
+                    </div>
+                    <div class="pc-col-right">
+                        <nav class="navbar navbar-expand-lg" id="pc-main-nav">
+                            <button class="navbar-toggler toggler-example mr-0 ml-auto" type="button" 
+                                data-toggle="collapse" data-target="#navbar-nav" 
+                                aria-controls="navbar-nav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span><i class="fas fa-stream"></i></span>
+                            </button>
+                            <div class="collapse navbar-collapse pc-nav" id="navbar-nav">
+                                <ul class="navbar-nav text-uppercase w-100 justify-content-around">
+                                    <li class="nav-item ">
+                                        <a class="nav-link pc-nav-link" href="../index.html">Home </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link pc-nav-link" href="/portale/portale.html">Portale</a>
+                                    </li>  
+                                    <li class="nav-item active">
+                                        <a class="nav-link pc-nav-link" href="negozio.html">Shop <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link pc-nav-link" href="/contact/contact.html">Contatti</a>
+                                    </li>  
+                                    <!-- navbar#Parte Destra-->                          
+                                    <li class="nav-item dropdown">
+                                        <button id="userZone_btn" data-toggle="dropdown" aria-expanded="false" class="dropdown-toggle text-uppercase pc-nav-link" style="background: none;border: none;"></button>
+                                        <div class="dropdown-menu" id="" style="min-width:unset; text-align: center;">
+                                            <span class='dropdown-item' id="userZone_0" style="padding:0;"></span>
+                                            <span class='dropdown-item' id="userZone_1" style="padding:0; padding-top: 5px; "></span>
+                                        </div>
+                                    </li>
+                                    </li>
+
+                                </ul>                            
+                            </div>                        
+                        </nav>
+                    </div>
+                </div>
+            </div>  
+        </div> 
+
+
+
+
+
+
         <!-- Block per la registrazione -->
         <div class="register-box">
             <h2>Iscriviti</h2>
@@ -51,9 +111,17 @@
                     <input type="password" name="password" id="password" required>
                     <label>Password (Almeno 6 caratteri)</label>
                 </div>
+                
+                <div style="color: white;">
+                    <input type="checkbox" id="show" name="show">
+                    Mostra Password
+                </div>
 
                 <!-- Sezione Password -->
                 <div id="variabile" class="text-center"></div>
+                <div style="display: none; font-size: medium; color: #03e9f4;" id="error-mail">
+                    Email non valida!
+                </div>
 
                 <!-- Bottone per la submit, che fa partire la funzione -->
                 <div class="submit-btn">
@@ -63,28 +131,6 @@
         </div>
 
         <!-- Script -->
-        <script>
-            // AjaxValid() - per controllare se l'utente è gia registrato
-            function ajaxvalid(){
-                $.post("register.php", $("#registr").serialize(), function(data, status, xhr){
-                    if(data!='0'){
-
-                        // Caso: Registrazione fallita
-                        $("#variabile").html(data);
-                        $("#variabile").addClass("alert alert-danger");
-                    } else {
-
-                        // Caso: Registrazione avvenuta con successo
-                        $("#variabile").removeClass("alert-danger");
-                        $("#variabile").addClass("alert alert-success");
-                        $("#variabile").html("Registrazione avvenuta con successo!");
-                        setTimeout(function(){window.location="../login/login.php";}, 3000);
-                    }
-                });
-
-                // Ritorna sempre false, per bloccare il reindirizzamento della submit
-                return false;
-            }
-        </script>
+        <script src="register.js"></script>
     </body>
 </html>

@@ -104,5 +104,5 @@ function caricaVisualizza(corso,i){
 
         ind++;
     };
-    progressiEsercizi(corso , `corso` + i );    
+    progressi(corso , `corso` + i );    
 }

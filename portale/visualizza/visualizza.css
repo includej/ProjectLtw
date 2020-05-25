@@ -52,8 +52,29 @@ position: absolute;
   border-bottom: 1px solid lightgray;
 }
 
+.visualizza-ruby .contenitore-gen .corso-link{
+  height: auto;
+  padding-top:8px;
+  border-bottom: 1px solid lightgray;
+}
 
+.visualizza-scala .contenitore-gen .corso-link{
+  height: auto;
+  padding-top:8px;
+  border-bottom: 1px solid lightgray;
+}
 
+.visualizza-javascript .contenitore-gen .corso-link{
+  height: auto;
+  padding-top:8px;
+  border-bottom: 1px solid lightgray;
+}
+
+.visualizza-rails .contenitore-gen .corso-link{
+  height: auto;
+  padding-top:8px;
+  border-bottom: 1px solid lightgray;
+}
 
 @media (max-width: 768px) {
     .btn-responsive {

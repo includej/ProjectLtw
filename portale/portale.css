@@ -1,4 +1,15 @@
-
+#dynamicZone a{
+    color:white;
+    font-weight: bolder;
+}
+#dynamicZone a:hover{
+    color: #9CC;
+    transition: 0.3s;
+    background:unset;
+}
+.container-fluid .row a:hover{
+    color: black;
+}
 
 body{
     height: 100%;

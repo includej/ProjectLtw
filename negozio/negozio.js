@@ -1,7 +1,5 @@
 
 function controllo() {
-  
-    
     if ($(".testo1").css("display") == "block" ){
       $(".testo1").css("display","none");
       $(".testo2").css("display","inline");

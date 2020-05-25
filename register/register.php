@@ -10,7 +10,7 @@
         $pass = md5(pg_escape_string($db,$_POST['password']));
 
         //  richiesta al database DB
-        $query = "SELECT * FROM utente WHERE email = '{$email}' AND username = '{$user}' AND password = '{$pass}'";
+        $query = "SELECT * FROM utente WHERE email = '{$email}' AND username = '{$user}' AND password = '{$pass}'";     //  Query che controlla se esiste un record con dati uguali
         $result = pg_query($db, $query) or die('Query fallita '.pg_last_error());    //  Esegui query sul DB $dbcon
         if (!pg_num_rows($result)){     //  Check se non esiste già una row con i parametri inserti della form
             $inQuery = "INSERT INTO utente VALUES('{$nome}','{$cognome}','{$email}','{$pass}', '{$user}')";
