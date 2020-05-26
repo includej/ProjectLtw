@@ -1,17 +1,17 @@
-/*  Carica Corsi    */
+/*  Carica Linguaggi    */
 
-function caricaCorsi(corso){
+function caricaLinguaggio(corso){
     $("#dynam").empty();
     caricaSfondo(corso,false);    
+    //evitiamo ridondanza
     for(i=0;i<7;i++){
-
         var nome_corso= "Corso "+i;
         if (i== 0){
             nome_corso= "Introduzione";
         }
         $("#dynam").append(        
             `<div>
-                <a href="#" class="link-corso" onclick="caricaVisualizza('`+ corso + `','` + i + `');">
+                <a href="#" class="link-corso" onclick="caricaCorso('`+ corso + `','` + i + `');">
                     <div id="contenitore-foto" class="container-fluid">
                         <img src="../img/`+ corso + `.jpg" class="img-fluid" style="max-width: 80%; height: auto;">
                         <div class="divIntro">
@@ -39,7 +39,7 @@ function caricaCorsi(corso){
 
 /*  Carica Visualizza   */
 
-function caricaVisualizza(corso,i){
+function caricaCorso(corso,i){
     $("#dynam").empty();
     
     //  Append Intro
@@ -50,7 +50,7 @@ function caricaVisualizza(corso,i){
     $("#dynam").append(`<div class="visualizza-`+i+`-`+ corso + ` visualizza-java">
 
     <!-- Bottone per tornare a pagina precedente -->
-    <button  class="btn btn-dark btn-responsive" onclick="caricaCorsi('`+corso+`');setTimeout(function(){progressiCorsi('`+ corso + `')},)" style="margin-bottom: 10px; border-radius: 100px; transition: 0.5s;"><i class="fas fa-long-arrow-alt-left"></i> Torna indietro </button>
+    <button  class="btn btn-dark btn-responsive" onclick="caricaLinguaggio('`+corso+`');setTimeout(function(){progressiCorsi('`+ corso + `')},)" style="margin-bottom: 10px; border-radius: 100px; transition: 0.5s;"><i class="fas fa-long-arrow-alt-left"></i> Torna indietro </button>
     
     <!-- Contenitore principale-->
     <div class="contenitore-visualizza" style="height: auto;">
