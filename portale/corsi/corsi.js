@@ -37,7 +37,7 @@ function caricaLinguaggio(corso){
 }
 
 
-/*  Carica Visualizza   */
+/*  Carica Corso */
 
 function caricaCorso(corso,i){
     $("#dynam").empty();
