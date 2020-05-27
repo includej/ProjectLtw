@@ -307,6 +307,7 @@ Portale.js:
   
   ```javascript
   function scorciatoia(corso){
+     
       var nome_corso = corso.toLowerCase();
       /*var user = "francesco";*/
       $.get("../sessionControl/sessionControl.php", function(data, status, xhr){
@@ -360,7 +361,7 @@ Corsi.js:
 - Funzione che carica i corsi del linguaggio selezionato ne setta lo sfondo e carica i progressi dei corsi
   
   ```javascript
-  function caricaCorsi(corso){
+  function caricaLinguaggio(corso){
       $("#dynam").empty();
       caricaSfondo(corso,false);    
       for(i=0;i<7;i++){
@@ -371,7 +372,7 @@ Corsi.js:
           }
           $("#dynam").append(        
               `<div>
-                  <a href="#" class="link-corso" onclick="caricaVisualizza('`+ corso + `','` + i + `');">
+                  <a href="#" class="link-corso" onclick="caricaCorso('`+ corso + `','` + i + `');">
                       <div id="contenitore-foto" class="container-fluid">
                           <img src="../img/`+ corso + `.jpg" class="img-fluid" style="max-width: 80%; height: auto;">
                           <div class="divIntro">
@@ -560,7 +561,7 @@ Contact.js:
       messaggio,             //   Campo Messaggio da inviare
       "smtp.libero.it",
       "projectcoding@libero.it",
-      "Porto2020@"
+      "password"
     );     
     alert("Email inviata con successo");
   }

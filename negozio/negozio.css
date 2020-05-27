@@ -349,9 +349,19 @@ label{
     transition: all 0.3s ease 0s;
 }
 
-.bottone:hover{
+.bottone1:hover{
     transform: scale(1.2);
     text-decoration: none;
+}
+
+.bottone2:hover{
+    text-decoration: none;
+    color: red;
+}
+
+.bottone3:hover{
+    text-decoration: none;
+    color: red;
 }
 
 .bottone1{

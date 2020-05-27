@@ -11,7 +11,8 @@ Vue.component('linguaggi',{
     </figure>
     `,
   methods:{               //    Metodo definito per ogni immagine
-    carica: function(){
+    carica: function(e){
+      e.preventDefault();
       scorciatoia(this.titolo);
     },
   },

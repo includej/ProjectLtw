@@ -2,7 +2,7 @@ function caricaLezione(corso, i, icorso){
     $("#dynam").empty();
     $("#dynam").append(`
       
-        <button  class="btn btn-dark btn-responsive" onclick="caricaVisualizza('` + corso + `', '` + icorso + `');" style="margin-bottom: 20px; border-radius: 100px; transition: 0.5s;"><i class="fas fa-long-arrow-alt-left"></i> Torna indietro </button>
+        <button  class="btn btn-dark btn-responsive" onclick="caricaCorso('` + corso + `', '` + icorso + `');" style="margin-bottom: 20px; border-radius: 100px; transition: 0.5s;"><i class="fas fa-long-arrow-alt-left"></i> Torna indietro </button>
         <div class="embed-responsive embed-responsive-16by9" style="padding-top: 30px;">
             <iframe src="` + caricaVideo(corso, (i+(icorso*2))) + `" frameborder="0" style="margin-left: 10%; max-width: 80%; max-height:80%; border-radius: 25px;"></iframe>    
             <button class="btn btn-success btn-responsive" onclick="/*Insert to do*/" style="border-radius: 50px; margin-left:44%; max-width: 30%; max-height: 5%; box-sizing: border-box;">
@@ -17,7 +17,7 @@ function caricaEsercizi(corso, icorso, iesercizio){
    
     $("#dynam").append(`
     <!-- bottone per tornare indietro -->
-    <button  class="btn btn-dark btn-responsive" onclick="caricaVisualizza('` + corso + `', '` + icorso + `');caricaSfondo('`+corso+`',false)" style="margin-bottom: 0px; border-radius: 100px; transition: 0.5s;"><i class="fas fa-long-arrow-alt-left"></i> Torna indietro </button>
+    <button  class="btn btn-dark btn-responsive" onclick="caricaCorso('` + corso + `', '` + icorso + `');caricaSfondo('`+corso+`',false)" style="margin-bottom: 0px; border-radius: 100px; transition: 0.5s;"><i class="fas fa-long-arrow-alt-left"></i> Torna indietro </button>
     <form method="POST">
         <!-- container esercizi -->
         <div class="container-fluid" style="margin-top: 30px">

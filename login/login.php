@@ -73,13 +73,13 @@
                                           <a class="nav-link pc-nav-link" href="../index.html">Home </a>
                                       </li>
                                       <li class="nav-item">
-                                          <a class="nav-link pc-nav-link" href="/portale/portale.html">Portale</a>
+                                          <a class="nav-link pc-nav-link" href="../portale/portale.html">Portale</a>
                                       </li>  
-                                      <li class="nav-item active">
-                                          <a class="nav-link pc-nav-link" href="negozio.html">Shop</a>
+                                      <li class="nav-item">
+                                          <a class="nav-link pc-nav-link" href="../negozio/negozio.html">Shop</a>
                                       </li>
                                       <li class="nav-item">
-                                          <a class="nav-link pc-nav-link" href="/contact/contact.html">Contatti</a>
+                                          <a class="nav-link pc-nav-link" href="../contact/contact.html">Contatti</a>
                                       </li>  
                                       <!-- navbar#Parte Destra-->                          
                                       <li class="nav-item dropdown">
