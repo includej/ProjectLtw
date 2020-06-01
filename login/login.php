@@ -125,15 +125,6 @@
               <div  class="submit-btn">
                 <input type="submit" >
               </div>
-              <!--<a href="#" id="submit" onclick="submit()">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                Submit
-              </a> -->
             </form>
           </div>
-
-          <!-- Testing -->
 </html>

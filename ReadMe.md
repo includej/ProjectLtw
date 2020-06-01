@@ -2,13 +2,7 @@
 
 Lo scopo di Project Code è fornire agli utenti una piattaforma che consente un apprendimento rapido ed esaustivo dei linguaggi di programmazione.
 
-Project Code è un'applicazione efficiente,modulare,scalabile:
-
-- efficiente
-
-- scalabile
-
-- modulare
+Project Code è un'applicazione efficiente,modulare,scalabile.
 
 Le tecnologie utilizzate nella web application sono: 
 
@@ -18,6 +12,7 @@ Le tecnologie utilizzate nella web application sono:
 
 - BOOTSTRAP
 
+
 - JAVASCRIPT
 
 - JQUERY
@@ -25,6 +20,7 @@ Le tecnologie utilizzate nella web application sono:
 - VUE.JS
 
 - AJAX
+
 
 -SERVER:
 
@@ -309,29 +305,26 @@ Portale.js:
   function scorciatoia(corso){
      
       var nome_corso = corso.toLowerCase();
-      /*var user = "francesco";*/
       $.get("../sessionControl/sessionControl.php", function(data, status, xhr){
           user = data;
       });
       var flag = false;
       $.getJSON("../server/progressi.json", function(json){
-          $.each(json[user][nome_corso],function(index, value){
-              /*index = corso 0, i = 0, nome_corso = java */
+          $.each(json[user][nome_corso],function(index, value){ //ciclo for che controlla il primo esercizio/lezione, del linguaggio cliccato, che l'utente deve ancora svolgere
               if (flag){
                   return false;
               }
-              for( i = 0; i < value.length; ++i){
-                  /*alert(index+" "+i+" "+nome_corso);*/
+              for( i = 0; i < value.length; ++i){  //scorre progressi dell'utente
                   if( (value[i]) == 0 ){
                       flag = true;
-                      if ((i%2)== 0){
-                          aggiornaProgressi(nome_corso,index,i);
+                      if ((i%2)== 0){  //controllo se è una videolezione
+                          aggiornaProgressi(nome_corso,index,i);    //carica progressi utente del linguaggio selezionato
                           index= index.substring((index.length)-1);
-                          caricaLezione(nome_corso,(i/2),index);       
+                          caricaLezione(nome_corso,(i/2),index);   //carica la lezione    
                       }
-                      else{
+                      else{  //caso esercizio
                           index= index.substring((index.length)-1);
-                          caricaEsercizi(nome_corso, index, i);
+                          caricaEsercizi(nome_corso, index, i); //carica esercizio
                       }
                       break;
                   } 
@@ -358,19 +351,19 @@ App.js:
 
 Corsi.js:
 
-- Funzione che carica i corsi del linguaggio selezionato ne setta lo sfondo e carica i progressi dei corsi
+- Funzione che carica i corsi del linguaggio selezionato ne setta lo sfondo e carica i progressi del corso selezionato, grazie a questa funzione scalabile carichiamo qualsiasi linguaggio di programmazione, grazie al corso preso in input e le apposite variabile nel codice html .
   
   ```javascript
-  function caricaLinguaggio(corso){
-      $("#dynam").empty();
-      caricaSfondo(corso,false);    
+  function caricaLinguaggio(corso){ 
+      $("#dynam").empty();   //svuota la pagina caricata nel portale in modo da caricare la nuova
+      caricaSfondo(corso,false);    //carica sfondo in base al linguaggio selezionato
       for(i=0;i<7;i++){
   
           var nome_corso= "Corso "+i;
-          if (i== 0){
+          if (i== 0){  //il primo container ha come nome "introduzione" e non "corso i"
               nome_corso= "Introduzione";
           }
-          $("#dynam").append(        
+          $("#dynam").append(        //append codice html al portale con apposite variabili in base al corso seleziona, il ciclo for invece crea gli n container di delle videolezioni/esercizi del linguaggio selezionato
               `<div>
                   <a href="#" class="link-corso" onclick="caricaCorso('`+ corso + `','` + i + `');">
                       <div id="contenitore-foto" class="container-fluid">
@@ -394,7 +387,7 @@ Corsi.js:
                   </a>
               </div>`);
       }
-      progressiCorsi(corso);
+      progressiCorsi(corso); //carica i progressi del linguaggio selezionato dell'attuale utente loggato
   }
   ```
 
@@ -426,7 +419,7 @@ Visualizza.css:
 
 Esercizi.js:
 
-- Funzione che carica il terminale e relativa animazione
+- Funzione che carica il terminale e relativa animazione, viene fatto un ciclo for per stampare ogni riga, con relativo time-out. Un ulteriore ciclo for è utilizzato su ogni carattere con relativo time-out, per dare l'effeto che l'esercizio lo stia scrivendo una persona in tempo reale.
   
   ```javascript
   function terminale() {
@@ -440,11 +433,10 @@ Esercizi.js:
         var self = $(this);
           setTimeout(function () {
             //ogni riga
-            $.each(self, function(index, carattere){
+            $.each(self, function(index, carattere){ //ciclo per ogni carattere
                 setTimeout(function () { 
                   //ogni char
-                  $("#"+rigaID).append("<span>"+carattere+"</span>");
-                  //$('.classe-terminale').scrollTop($(document).height());
+                  $("#"+rigaID).append("<span>"+carattere+"</span>"); //aggiunta di ogni carattere con relativo span
                 }, index*30);
             });
           }, index*1200);
@@ -456,11 +448,11 @@ Esercizi.js:
 - Funzione che controlla le risposte date agli esercizi
   
   ```javascript
-  function checkA(corso, iCorso, iEsercizio){
-    var ArrayR = new Array($('#risposta1').data('text'),$('#risposta2').data('text'),$('#risposta3').data('text'));
+  function checkA(corso, iCorso, iEsercizio){   
+    var ArrayR = new Array($('#risposta1').data('text'),$('#risposta2').data('text'),$('#risposta3').data('text')); //array con le risposte giuste del l'esercizio selezionato
     var esatte = 0;
-    for(i = 1; i < 4 ; i++){
-      if (ArrayR[i-1] == $("#risposta"+i.toString()).val().replace(/"/g, "'")){    
+    for(i = 1; i < 4 ; i++){ //ciclo per controllare tutte le risposte date
+      if (ArrayR[i-1] == $("#risposta"+i.toString()).val().toLowerCase()){    //check se la risposta [i] data è coretta
         esatte++;
         $("#risposta"+i.toString()).attr('disabled','disabled');
         $("#risposta"+i.toString()).css("border-color", "green");
@@ -478,13 +470,13 @@ Esercizi.js:
         $("#risposta"+i.toString()).css("border-color", "red");
       }
     }
-    if ( esatte < 3){
+    if ( esatte < 3){ //non tutte le risposte date sono corette
       $("#btn-form").css("border-color", "red");
       return false;
     }
     $("#btn-form").css("border-color", "green");
-    aggiornaProgressi(corso,iCorso, iEsercizio);
-    return false;
+    aggiornaProgressi(corso,iCorso, iEsercizio); //aggiorna i progressi dell'utente visto che ha dato tutte le risposte corette
+    return false; //ritorna sempre false per non far reindirizzare 
   }
   ```
 
@@ -492,14 +484,14 @@ Esercizi.js:
   
   ```javascript
   function aggiornaProgressi(corso,visualizza,i){
-        $.get("../../sessionControl/sessionControl.php", function(data, status, xhr){
+        $.get("../../sessionControl/sessionControl.php", function(data, status, xhr){  //prende username utente
           username = data;
         });
   
         var xhttp = new XMLHttpRequest();
-        xhttp.open("POST", "../../server/aggiornaJson.php", true);
+        xhttp.open("POST", "../../server/aggiornaJson.php", true); //apre databese progressi utente
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send("user="+ username +"&corso=" + corso + "&visualizza="+ visualizza +"&i="+ i); 
+        xhttp.send("user="+ username +"&corso=" + corso + "&visualizza="+ visualizza +"&i="+ i); //aggiorna i progressi dell'utente in base alla videolezione/esercizio svolto
   }
   ```
 
@@ -547,7 +539,7 @@ Contact.js:
   
   ```javascript
   function inviaMess(){
-      var soggetto = $(".btn-mess").attr("id");
+      var soggetto = $(".btn-mess").attr("id"); //prende il nome dell'autore che viene contattato
   
       var mail = document.messForm.mail.value;
       var messaggio = document.messForm.messaggio.value;
@@ -557,7 +549,7 @@ Contact.js:
       Email.send(
       "projectcoding@libero.it",      //E-MAIL DI SEND
       "projectcoding@libero.it",      //E-MAIL DI RICEZIONE
-      "Inviato a: " + soggetto + ", Inviato da: " + mail + " " + nome + " " + cognome,
+      "Inviato a: " + soggetto + ", Inviato da: " + mail + " " + nome + " " + cognome,  //oggetto mail con nome autore contattato + dati utente che invia il messaggio
       messaggio,             //   Campo Messaggio da inviare
       "smtp.libero.it",
       "projectcoding@libero.it",
@@ -600,8 +592,8 @@ Negozio.js:
 - Funzione selezione piano mensile/annuale
   
   ```javascript
-  function controllo() {
-      if ($(".testo1").css("display") == "block" ){
+  function controllo() {   
+      if ($(".testo1").css("display") == "block" ){ 
         $(".testo1").css("display","non);
         $(".testo2").css("display","inline");
         $("#meseanno").text("Mese");

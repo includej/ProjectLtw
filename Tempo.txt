@@ -1,0 +1,82 @@
+Progetto Project Code
+
+
+Lo scopo di Project Code è fornire agli utenti una piattaforma che consente un apprendimento rapido ed esaustivo dei linguaggi di programmazione.
+Il sito offre videolezioni ed esercizi per ogni linguaggio di programmazione, salvando i progressi di ogni utente nel server (apposito file progressi.JSON).
+Project Code è un'applicazione efficiente,modulare,scalabile, grazie alle apposite funzioni Javascript, JQuery, Vue.js implementate.
+Il Database PostgresSQL  è hostato online sul sito ElephantSQL.
+Tutte le pagine relative ai linguaggi di programmazione vengono caricate in modo asincrono (JQuery Ajax) dentro il portale (portale.html).
+Per una documentazione più dettagliata vedere il  file ReadMe.md dentro il file zip (CONSIGLIATA LETTURA). 
+
+Le tecnologie utilizzate nella web application sono: 
+
+LATO CLIENT:    
+
+- HTML
+- BOOTSTRAP
+- JAVASCRIPT
+- JQUERY
+- VUE.JS
+- AJAX
+
+LATO SERVER:
+
+- PHP
+- POSTGRESQL (DATABASE RELAZIONALE)
+
+Lista pagine che compongono il sito (ogni pagina ha la lista dei file che la compongono, più una breve descrizione delle funzioni principali):
+
+Funzioni controllo utente:
+-SessionControl.js (tramite richiesta ajax richiede il file SessionControl.php)
+-SessionControl.php  (Controlla se l’utente è loggato)
+
+Home Page: 
+-Index.html
+-Projectcode.css
+-Projectcode.js (contiene funzione per slideshow in background attraverso plugin Backstretch)
+
+Register
+-Register.html
+-Register.css
+-Register.js (funzione che richiede la pagina Register.php per l'inserimento dei dati nel database)
+-Register.php (controlla se esiste un record con dati inseriti dall'utente, e se non esistono record, inserisce e registra il nuovo utente)
+
+Login
+-Login.php (parte HTML + controlla se i dati inseriti dall'utente corrispondono ad un record nel database)
+-Login.css
+
+Portale
+-Portale.html
+-Portale.css
+-Portale.js (funzioni: controllo se utente è loggato, in caso reiniirizza alla pagina di login; reindirizzamento all'ultima lezione/esercizio non svolto, dalla dashboard; funzione che mostra la storia; funzione per la barra dei progressi)
+-App.js (Dashboard scritta in Vue.js)
+
+Lista Corsi:
+-Corsi.js (funzioni: funzione per caricare i corsi del linguaggio selezionato; funzione che carica la lista delle lezioni/esercizi per il corso selezionato)
+-Corsi.css
+
+Lista Lezioni/Esercizi:
+-Visualizza.js (Funzioni: Funzione per caricare la videolezione; funzione per caricare gli esercizi)
+-Visualizza.css
+
+Esercizi:
+-Esercizi.js (Funzioni: animazione terminale; funzione per il controllo delle risposte; funzione che aggiorna i progressi tramite richiesta a pagina aggiornaJson.php)
+-aggiornaJson.php (aggiorna i progressi)
+-Esercizi.css
+
+Storia:
+-Storia.js (Funzioni: funzione che crea la timeline dinamicamente in base al linguaggio selezionato)
+-Storia.css
+
+Documentazione:
+-Documentazione.html
+
+Negozio:
+-Negozio.html
+-Negozio.css
+-Negozio.js (Funzioni: funzione per il cambio del piano mensile in annuale e viceversa)
+
+Contatti:
+-Contatti.HTML
+-Contatti.css
+-Contatti.js (Funzioni: funzione per invio dell'email allo sviluppatore; funzione per selezionare lo sviluppatore da contattare e visualizzazione della form)
